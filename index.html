@@ -351,9 +351,8 @@ layout: page
                       </td>
                       <td align="right">
                         (<a href="http://{{ site.github_org }}.github.io/{{ site.gitub_repo }}/{{ documentation_url }}" title="View Documentation" style="padding: 3px;">Docs</a>)
-                        {% if openapi_spec_url != null and openapi_spec_url != empty %}
-                          (<a href="{{ site.url }}{{ openapi_spec_url }}" target="_blank" title="View OpenAPI Spec" style="padding: 3px;">Specs</a>)
-                        {% endif %}
+                        (<a href="{{ site.url }}{{ openapi_spec_url }}" target="_blank" title="View OpenAPI Spec" style="padding: 3px;">Specs</a>)
+                        (<a href="/annotations/" title="Conversation" style="padding: 3px;">Conversation</a>)
                       </td>
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
