@@ -261,7 +261,11 @@ function processAPIsJSON($apisURL)
 
   $fullcount = $fullcount + 1;
 
-  $apisYAML = jsyaml.load($apisURL);
+  $( "#result" ).load($apisURL, function($data) {
+
+    alert( "Load was performed." );
+
+  $apisYAML = jsyaml.load($data);
   console.log("HERE: " + $apisYAML);
 
   //document.getElementById("jsonViewerDetails").value = $apisYAML;
@@ -399,7 +403,7 @@ function processAPIsJSON($apisURL)
         }
       });
     });
-
+  });
 }
 
 $apisURL = "https://raw.githubusercontent.com/adopta-agency/open-referral-miami/master/_data/apis.yaml";
