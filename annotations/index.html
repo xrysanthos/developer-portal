@@ -263,8 +263,7 @@ function processAPIsJSON($apisURL)
   // Load it from RAW YAML
   var request = $.ajax({
     url: $apisURL,
-    method: "GET",
-    dataType: "yaml"
+    method: "GET"
   });
 
   request.fail(function( jqXHR, textStatus ) {
