@@ -1,29 +1,32 @@
-- name: Open Referral API
-  description: This is a specification describing the Open Referral API, using the Human
-    Services Specification. This has been extracted from the Ohana API deployment, but
-    will be standardized to refer to the universal standard that will apply to any Open
-    Referral compliant API.
-  image: https://s3.amazonaws.com/kinlane-productions/adopta-agency/open-referral/openreferral-logo.png
-  x-open-ranking: '0'
+- name: Switchboard of Miami Developers
+  description: This is a developer area for the Switchboard of Miami API. The website is an Open Referral compliant implementation. This site is currently under development.
+  image: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
   tags:
-  - API
-  - Human Services
-  created: '2016-04-09'
-  modified: '2016-04-09'
-  url: http://adopta-agency.github.io/open-referral-api/
+    - Human Services
+    - Locations
+    - Services
+    - Open Referral
+    - API
+    - Application Programming Interface
+    - Developers
+  created: '2017-01-23'
+  modified: '2017-01-23'
+  url: http://developer.switchboard.miami.adopta.agency/
   specificationVersion: '0.14'
   apis:
-  - name: Open Referral API
-    description: This is a specification describing the Open Referral API, using the
-      Human Services Specification. This has been extracted from the Ohana API deployment,
-      but will be standardized to refer to the universal standard that will apply to
-      any Open Referral compliant API.
-    image: https://s3.amazonaws.com/kinlane-productions/adopta-agency/open-referral/openreferral-logo.png
-    humanURL: http://adopta-agency.github.io/open-referral-api/
+  - name: Switchboard of Miami API
+    description: Switchboard of Miami data.
+    image: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
+    humanURL: http://developer.switchboard.miami.adopta.agency/
     baseURL: "/"
     tags:
-    - API
-    - Human Services
+      - Human Services
+      - Locations
+      - Services
+      - Open Referral
+      - API
+      - Application Programming Interface
+      - Developers
     properties:
     - type: x-openapi-spec
       url: api-commons/openapi-spec.json

@@ -1,9 +1,5 @@
 name: Switchboard of Miami Developers
-description: This is a developer area for the Switchboard of Miami API. The website is an Open Referral compliant implementation. This site is currently under development.
 url: http://developer.switchboard.miami.adopta.agency/
-version: 1.1.1
-logo: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
-twitter: apievangelist
 
 author:
   name: 'Kin Lane'
@@ -20,22 +16,6 @@ delete_color: FF9900;
 
 github_org: adopta-agency
 github_repo: open-referral-miami
-
-tags:
-  - Human Services
-  - Locations
-  - Services
-  - Open Referral
-  - API
-  - Application Programming Interface
-  - Developers
-
-api:
-  - title: Switchboard of Miami API
-    human_url: http://developer.switchboard.miami.adopta.agency/
-    base_url: http://{{ need this }}/
-    openapi_spec_url: https://raw.githubusercontent.com/adopta-agency/open-referral-miami/master/_data/apis.yaml
-
 
 # URL to the issues page for this
 support_title: Support
