@@ -275,9 +275,9 @@ function processAPIsJSON($apisURL)
   request.done(function( $data ) {
 
     alert( "Load was performed." );
-
+console.log($data);
   $apisYAML = jsyaml.load($data);
-
+console.log($apisYAML);
   });
 }
 
