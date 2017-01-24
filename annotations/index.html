@@ -375,7 +375,7 @@ function processAPIsJSON($apisURL)
 
                   $.each(methodValue['parameters'], function($parameterKey, $parameterValue){
                     $html = '<li class="paramitem">(<i>' + $parameterValue['in'] + '</i>) <strong>' + $parameterValue['name'] + '</strong> - ' + $parameterValue['type'];
-                    if($parameterValue['description'] && $parameterValue['description'] != '')
+                    if($parameterValue['description'] && $parameterValue['description'] != '' && $parameterValue['description'] != 'undefined')
                       {
                       $html = $html + ' - ' + $parameterValue['description'];
                       }
