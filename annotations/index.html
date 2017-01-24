@@ -267,14 +267,14 @@ function processAPIsJSON($apisURL)
   });
 
   request.fail(function( jqXHR, textStatus ) {
-    alert( "Request failed: " + textStatus );
+    alert( "The API Index did not load!" );
   });
 
   request.done(function( $data ) {
 
     $apisYAMLObj = jsyaml.load($data);
     $apisYAML = $apisYAMLObj[0];
-    console.log($apisYAML);
+    //console.log($apisYAML);
 
     document.getElementById("jsonViewerDetails").value = $apisYAML;
 
@@ -317,7 +317,20 @@ function processAPIsJSON($apisURL)
             $pull_url = $url;
             }
 
-          var loadIt3 = $.getJSON($pull_url, function($openapispec) {
+
+          // Load it from RAW YAML
+          var request = $.ajax({
+            url: $pull_url,
+            method: "GET"
+          });
+
+          request.fail(function( jqXHR, textStatus ) {
+            alert( "The Open API Spec did not load!" );
+          });
+
+          request.done(function( $yaml ) {
+
+            $openapispec = jsyaml.load($yaml);
 
             $paths = $openapispec['paths'];
             $title = $openapispec['info']['title'];
