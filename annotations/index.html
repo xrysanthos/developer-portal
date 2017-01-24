@@ -374,8 +374,13 @@ function processAPIsJSON($apisURL)
                   $('#specListing').append($html);
 
                   $.each(methodValue['parameters'], function($parameterKey, $parameterValue){
-                    $html = '<li class="paramitem">(<i>' + $parameterValue['in'] + '</i>) <strong>' + $parameterValue['name'] + '</strong> - ' + $parameterValue['type'] + ' - ' + $parameterValue['description'] + '></l>';
-                    $('#' + $apislug).append($html);
+                    $html = '<li class="paramitem">(<i>' + $parameterValue['in'] + '</i>) <strong>' + $parameterValue['name'] + '</strong> - ' + $parameterValue['type'];
+                    if($parameterValue['description'] && $parameterValue['description'] != '')
+                      {
+                      $html = $html + ' - ' + $parameterValue['description'];
+                      }
+                     $html = $html + '></l>';
+                     $('#' + $apislug).append($html);
                     });
                   }
 
