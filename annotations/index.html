@@ -258,11 +258,9 @@ function processAPIsJSON($apisURL)
 {
 
   $apiHumanURL = "";
-
   $fullcount = $fullcount + 1;
 
-  console.log("URL: " + $apisURL);
-
+  // Load it from RAW YAML
   var request = $.ajax({
     url: $apisURL,
     method: "GET",
