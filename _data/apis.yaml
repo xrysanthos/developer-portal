@@ -11,7 +11,7 @@
     - Developers
   created: '2017-01-23'
   modified: '2017-01-23'
-  url: http://developer.switchboard.miami.adopta.agency/
+  url: http://developer.switchboard.miami.adopta.agency/apis.json
   specificationVersion: '0.14'
   apis:
   - name: Switchboard of Miami API
