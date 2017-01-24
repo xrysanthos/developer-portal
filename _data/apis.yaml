@@ -58,7 +58,7 @@
   - type: x-issues
     url: issues/
   - type: x-login
-    url: login/
+    url: http://developer.switchboard.miami.adopta.agency/
   - type: x-dedicated-plans--pricing-page
     url: plans/
   - type: x-privacy-policy-page
@@ -66,7 +66,7 @@
   - type: x-road-map
     url: road-map/
   - type: x-selfservice-registration
-    url: signup/
+    url: http://developer.switchboard.miami.adopta.agency/
   - type: x-status-dashboard
     url: status/
   - type: x-support-overview-page
