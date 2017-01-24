@@ -404,10 +404,12 @@ layout: page
                                   {% assign summary = method[1].summary %}
 
                                   {% if tag == grouptag %}
-                                    <li style="font-size: 12px; padding-left: 20px;">
-                                      <span style="color:#000;">{{ summary }}</span>
-                                      (<span style="color:#{{ back_color }}; font-weight:bold;">{{ verb }}</span>)
-                                    </li>
+                                    {% if summary != '' %}
+                                      <li style="font-size: 12px; padding-left: 20px;">
+                                        <span style="color:#000;">{{ summary }}</span>
+                                        (<span style="color:#{{ back_color }}; font-weight:bold;">{{ verb }}</span>)
+                                      </li>
+                                    {% endif %}
                                   {% endif %}
 
                                 {% endfor %}
