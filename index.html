@@ -382,7 +382,7 @@ layout: page
                           {% for grouptag in tagArray %}
 
                             {% if grouptag != '' %}
-                              <li style="font-size: 14px; padding-bottom: 5px;"><strong>{{ grouptag }}</strong></li><ul style="font-size: 12px; margin-left: 25px;">
+                              <li style="font-size: 14px; padding-bottom: 5px; list-style: none;"><strong>{{ grouptag }}</strong></li><ul style="font-size: 12px; margin-left: 25px;">
                             {% endif %}
 
                             {% for spec in openapi_spec_json %}
