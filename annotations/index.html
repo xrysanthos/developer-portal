@@ -321,7 +321,8 @@ function processAPIsJSON($apisURL)
 
           request.done(function( $yaml ) {
 
-            $openapispec = jsyaml.load($yaml);
+            $openapispecObj = jsyaml.load($data);
+            $openapispec = $openapispecObj[0];
 
             $paths = $openapispec['paths'];
             $title = $openapispec['info']['title'];
@@ -399,7 +400,7 @@ function processAPIsJSON($apisURL)
 
           });
 
-          
+
         }
       });
     });
