@@ -1,0 +1,17 @@
+- title: Signup
+  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
+  header: This is the sign up page for the API area.
+  footer: This is the footer for the sign up page.
+  resources:
+    - title: using Github
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
+      url: https://github.com/
+    - title: using Twitter
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
+      url: https://twitter.com/
+    - title: using Email
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email-at.png
+      url: https://email.com/

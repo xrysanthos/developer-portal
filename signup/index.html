@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+{% assign index = site.data.api-commons.api-signup %}
+{% assign apisignup = index[0] %}
+
+<h1>{{ apisignup.title }}</h1>
+<p><img src="{{ apisignup.image }}" align="right" width="75" style="padding: 5px;" /></p>
+<p>{{ apisignup.header }}</p>
+<table cellpadding="10" cellspacing="10" width="100%">
+	<tr>
+	{% for resource in apisignup.resources %}
+		<td align="center" valign="top">
+			<a href="{{ resource.url }}"><img src="{{ resource.image }}" width="75" align="center"></a>
+			<a href="{{ resource.url }}">{{ resource.title }}</a>
+		</td>
+	{% endfor %}
+	</tr>
+</table>
+<p>{{ apisignup.footer }}</p>

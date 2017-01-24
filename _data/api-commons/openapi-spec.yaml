@@ -1,6 +1,6 @@
 - swagger: '2.0'
   info:
-    title: Open Referral API
+    title: Switchboard Miami API
     description: This is a specification describing the Open Referral API, using the
       Human Services Specification. This has been extracted from the Ohana API deployment,
       but will be standardized to refer to the universal standard that will apply to
@@ -15,11 +15,13 @@
       url: http://opendatacommons.org/licenses/pddl/
     version: v1
   host: api.example.com
-  basePath: "/api/"
+  basePath: "/"
   schemes:
   - http
+  - https
   produces:
   - application/json
+  - application/xml
   paths:
     "/categories":
       get:
@@ -32,10 +34,10 @@
             schema:
               type: array
               items:
-                "$ref": "#/definitions/category"
+                "$ref/": "#/definitions/category"
         tags:
         - Categories
-    "/contacts":
+    "/contacts/":
       get:
         summary: Get Contacts
         description: Get Contacts
@@ -85,7 +87,7 @@
                 "$ref": "#/definitions/contacts"
         tags:
         - Contacts
-    "/contacts/:contact_id":
+    "/contacts/:contact_id/":
       get:
         summary: Get Contact
         description: Get Contact
@@ -159,7 +161,7 @@
               type: array
               items:
                 "$ref": "#/definitions/contact"
-    "/contacts/:contact_id/phones":
+    "/contacts/:contact_id/phones/":
       get:
         summary: Get Phones
         description: Get Phones
@@ -209,7 +211,7 @@
                 "$ref": "#/definitions/phone"
         tags:
         - Contact - Phones
-    "/contacts/:contact_id/phones/:phone_id":
+    "/contacts/:contact_id/phones/:phone_id/":
       get:
         summary: Get Phone
         description: get Phone
@@ -286,7 +288,7 @@
                 "$ref": "#/definitions/phone"
         tags:
         - Contact - Phones
-    "/locations":
+    "/locations/":
       get:
         summary: Get Locations
         description: Get Locations
@@ -339,7 +341,7 @@
                 "$ref": "#/definitions/location"
         tags:
         - Locations
-    "/locations/:location_id":
+    "/locations/:location_id/":
       get:
         summary: Get Location
         description: Get Location
@@ -2350,7 +2352,7 @@
                 "$ref": "#/definitions/service"
         tags:
         - Organization - Program Services
-    "/organizations/:organization_id/programs/:program_id/services/:service_id":
+    "/organizations/:organization_id/programs/:program_id/services/:service_id/":
       get:
         summary: Get Service
         description: Get Service
@@ -2528,7 +2530,7 @@
                 "$ref": "#/definitions/service"
         tags:
         - Organization - Services
-    "/search":
+    "/search/":
       get:
         summary: Get locations that match certain criteria.
         description: Get locations that match certain criteria.
@@ -2563,7 +2565,7 @@
             description: OK
         tags:
         - Search
-    "/services":
+    "/services/":
       get:
         summary: Get Services
         description: Get Services
@@ -2625,7 +2627,7 @@
                 "$ref": "#/definitions/services"
         tags:
         - Services
-    "/services/:service_id":
+    "/services/:service_id/":
       get:
         summary: Get Service
         description: Get Service

@@ -29,11 +29,11 @@
       - Developers
     properties:
     - type: x-openapi-spec
-      url: api-commons/openapi-spec.json
+      url: api-commons/openapi-spec.yaml
     - type: x-json-schema
-      url: api-commons/schema.json
+      url: api-commons/schema.yaml
     - type: x-api-filters
-      url: api-commons/api-filter.json
+      url: api-commons/api-filter.yaml
   x-common:
   - type: x-authentication-overview
     url: authentication/
@@ -46,7 +46,7 @@
   - type: x-change-log
     url: change-log/
   - type: x-portal
-    url: http://adopta-agency.github.io/open-referral-api/
+    url: http://developer.switchboard.miami.adopta.agency/
   - type: x-documentation
     url: documentation/
   - type: x-faq
@@ -54,11 +54,11 @@
   - type: x-getting-started
     url: getting-started/
   - type: x-github
-    url: https://github.com/openreferral
+    url: https://github.com/adopta-agency/open-referral-miami/
   - type: x-issues
     url: issues/
   - type: x-login
-    url: https://apievangelist.3scale.net/login
+    url: login/
   - type: x-dedicated-plans--pricing-page
     url: plans/
   - type: x-privacy-policy-page
@@ -66,7 +66,7 @@
   - type: x-road-map
     url: road-map/
   - type: x-selfservice-registration
-    url: https://apievangelist.3scale.net/signup
+    url: signup/
   - type: x-status-dashboard
     url: status/
   - type: x-support-overview-page
@@ -74,7 +74,7 @@
   - type: x-terms-of-service-page
     url: terms-of-service/
   - type: x-twitter
-    url: https://twitter.com/openreferral
+    url: https://twitter.com/apievangelist
   include: []
   maintainers:
   - FN: Kin Lane
