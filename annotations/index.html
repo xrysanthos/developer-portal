@@ -74,7 +74,7 @@ function showAPIsjson()
   // Bring into focus
   document.getElementById("jsonViewerDetails").style.display = '';
   // Show the Modal
-  $('#apisJSONModal').modal('show');
+  $('#apisYAMLModal').modal('show');
   }
 
 function addMessageForm($message_path,$message_method)
@@ -263,19 +263,17 @@ function processAPIsJSON($apisURL)
 
   $fullcount = $fullcount + 1;
 
-  $apisJSON = jsyaml.load($apisURL);
+  $apisYAML = jsyaml.load($apisURL);
 
-    // Publish to Viewer
-    $viewer = JSON.stringify($apisJSON, null, 4);
-    document.getElementById("jsonViewerDetails").value = $viewer;
+  document.getElementById("jsonViewerDetails").value = $apisYAML;
 
-    $masterName = $apisJSON['name'];
-    $masterDesc = $apisJSON['description'];
-    $masterLogo = $apisJSON['image'];
-    $masterURL = $apisJSON['url'];
-    $masterTags = $apisJSON['tags'];
+    $masterName = $apisYAML['name'];
+    $masterDesc = $apisYAML['description'];
+    $masterLogo = $apisYAML['image'];
+    $masterURL = $apisYAML['url'];
+    $masterTags = $apisYAML['tags'];
 
-    $.each($apisJSON['apis'], function(apiKey, apiVal) {
+    $.each($apisYAML['apis'], function(apiKey, apiVal) {
 
       $apiName = apiVal['name'];
       $html = '<tr><td colspan="3">';
@@ -300,7 +298,7 @@ function processAPIsJSON($apisURL)
 
           if(!$url.indexOf('http') > -1)
             {
-            $baseSite = $apisJSON['url'].replace('apis.json','');
+            $baseSite = $apisYAML['url'].replace('apis.json','');
             $pull_url = $baseSite + $url;
             }
           else
@@ -425,7 +423,7 @@ processAPIsJSON($apisURL);
   </tr>
 </table>
 <p>You can fork this project, and run under your own account, on your own APIs.json index. I am just exploring different ways of working with the surface area of an API, using machine readable API definitions like APIs.json and OpenAPI Spec.</p>
-<div class="modal fade" id="apisJSONModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+<div class="modal fade" id="apisYAMLModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
