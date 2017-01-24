@@ -265,7 +265,8 @@ function processAPIsJSON($apisURL)
 
   var request = $.ajax({
     url: $apisURL,
-    method: "GET"
+    method: "GET",
+    dataType: "yaml"
   });
 
   request.fail(function( jqXHR, textStatus ) {
@@ -274,10 +275,143 @@ function processAPIsJSON($apisURL)
 
   request.done(function( $data ) {
 
-    alert( "Load was performed." );
-console.log($data);
-  $apisYAML = jsyaml.load($data);
-console.log($apisYAML);
+    $apisYAML = jsyaml.load($data);
+
+    document.getElementById("jsonViewerDetails").value = $apisYAML;
+
+    $masterName = $apisYAML['name'];
+    $masterDesc = $apisYAML['description'];
+    $masterLogo = $apisYAML['image'];
+    $masterURL = $apisYAML['url'];
+    $masterTags = $apisYAML['tags'];
+
+    $.each($apisYAML['apis'], function(apiKey, apiVal) {
+
+      $apiName = apiVal['name'];
+      $html = '<tr><td colspan="3">';
+      $html = $html + '<strong>' + $apiName + '</strong><br />';
+      $html = $html + '</td></tr>';
+      $('#specListing').append($html);
+
+      $apiHumanURL = apiVal['humanURL'];
+      $apiBaseURL = apiVal['baseURL'];
+
+      $apiProperties = apiVal['properties'];
+
+      $.each($apiProperties, function(propertyKey, propertyValue) {
+
+        $type = propertyValue['type'];
+        $url = propertyValue['url'];
+
+        if($type=='x-openapi-spec')
+          {
+
+          $fullcount = $fullcount + 1;
+
+          if(!$url.indexOf('http') > -1)
+            {
+            $baseSite = $apisYAML['url'].replace('apis.json','');
+            $pull_url = $baseSite + $url;
+            }
+          else
+            {
+            $pull_url = $url;
+            }
+
+          var loadIt3 = $.getJSON($pull_url, function($openapispec) {
+
+            $paths = $openapispec['paths'];
+            $title = $openapispec['info']['title'];
+
+            $apiSlug = $title.replace(/ /g,"-");
+            $apiSlug = $apiSlug.toLowerCase();
+
+            // show the unique host
+            $host = $openapispec['host'];
+            $basepath = $openapispec['basePath'];
+
+            $html = '<tr><td colspan="3"><strong>Host:</strong> ' + $host + '</td></tr>';
+            $('#specListing').append($html);
+
+            $html = '<tr><td colspan="3"><strong>Base Path:</strong> ' + $basepath + '</td></tr>';
+            $('#specListing').append($html);
+
+            $.each($paths, function(pathKey, pathValue) {
+
+              $path_name = pathKey;
+
+              $pathexist = 0;
+              $.each($verbArray, function(key, value) {if(value == $path_name){ $pathexist = 1; }});
+              if($pathexist==0) {  $pathArray.push($path_name); }
+
+              $.each(pathValue, function(methodKey, methodValue) {
+
+                $method = methodKey;
+                $method = $method.toUpperCase();
+
+                $sQuote = String.fromCharCode(39);
+
+                $html = '<tr>';
+                $html = $html + '<td class="pathname">' + $path_name + '</td>';
+                $html = $html + '<td class="method" width="35">(' + $method + ')</td>';
+                $html = $html + '<td width="50" onclick="addMessageField(' + $sQuote + $path_name + $sQuote + ',' + $sQuote + $method + $sQuote + '); return false;"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-messaging-system.png" width="25" /></td>';
+                $html = $html + '</tr>';
+
+                $('#specListing').append($html);
+
+                $method_summary = methodValue['summary'];
+                $apislug = $method_summary.replace(/ /g,"-") + '-' + $method.replace(/ /g,"-");
+                $apislug = $apislug.replace('.',"");
+                $apislug = $apislug.toLowerCase();
+
+                if(methodValue['parameters'].length > 0)
+                  {
+                  $html = '<tr><td colspan="3"><ul id="' + $apislug + '" class="paramlist"></ul></td></tr>';
+                  $('#specListing').append($html);
+
+                  $.each(methodValue['parameters'], function($parameterKey, $parameterValue){
+                    $html = '<li class="paramitem">(<i>' + $parameterValue['in'] + '</i>) <strong>' + $parameterValue['name'] + '</strong> - ' + $parameterValue['type'] + ' - ' + $parameterValue['description'] + '></l>';
+                    $('#' + $apislug).append($html);
+                    });
+                  }
+
+                $tags = methodValue['tags'];
+                $.each($tags, function($tagKey, $tagValue) {
+
+                  $tag = $tagValue;
+                  $tag = $tag.trim();
+                  $tagslug = $tag.replace(/ /g,"-");
+                  $tagslug = $tagslug.toLowerCase();
+                  $tag = $tag.charAt(0).toUpperCase() + $tag.slice(1);
+
+                  $tagexists = 0;
+                  $.each($tagArray, function(key, value) { if(value == $tag){ $tagexists = 1; } });
+                  if($tagexists==0) { $tagArray.push($tag);  }
+
+                });
+
+              });
+            });
+
+
+          });
+
+          loadIt3.complete(function() {
+
+            $fullcount = $fullcount - 1;
+            if($fullcount==0){
+
+              // Load What We Want
+              $(function() {
+
+                // Do Something
+
+              });
+            }
+          });
+        }
+      });
+    });
   });
 }
 
