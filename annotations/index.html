@@ -264,8 +264,9 @@ function processAPIsJSON($apisURL)
   $fullcount = $fullcount + 1;
 
   $apisYAML = jsyaml.load($apisURL);
+  console.log($apisYAML);
 
-  document.getElementById("jsonViewerDetails").value = $apisYAML;
+  //document.getElementById("jsonViewerDetails").value = $apisYAML;
 
     $masterName = $apisYAML['name'];
     $masterDesc = $apisYAML['description'];
