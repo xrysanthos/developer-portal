@@ -321,7 +321,7 @@ function processAPIsJSON($apisURL)
 
           request.done(function( $yaml ) {
 
-            $openapispecObj = jsyaml.load($data);
+            $openapispecObj = jsyaml.load($yaml);
             $openapispec = $openapispecObj[0];
 
             $paths = $openapispec['paths'];
