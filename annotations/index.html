@@ -368,7 +368,7 @@ function processAPIsJSON($apisURL)
                 $apislug = $apislug.replace('.',"");
                 $apislug = $apislug.toLowerCase();
 
-                if(methodValue['parameters'].length > 0)
+                if(methodValue['parameters'] && methodValue['parameters'].length > 0)
                   {
                   $html = '<tr><td colspan="3"><ul id="' + $apislug + '" class="paramlist"></ul></td></tr>';
                   $('#specListing').append($html);
