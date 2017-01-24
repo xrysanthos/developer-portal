@@ -358,9 +358,11 @@ layout: page
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
-                        <ul>
+
+                        <ul style="margin-left: 25px;">
 
                           {% assign taglist = '' %}
+
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
                               {% assign method_json = path[1] %}
@@ -380,7 +382,7 @@ layout: page
                           {% for grouptag in tagArray %}
 
                             {% if grouptag != '' %}
-                              <li style="font-size: 14px; margin-left: 5px; padding-bottom: 5px;"><strong>{{ grouptag }}</strong></li><ul style="font-size: 12px; margin-left: 25px;">
+                              <li style="font-size: 14px; padding-bottom: 5px;"><strong>{{ grouptag }}</strong></li><ul style="font-size: 12px; margin-left: 25px;">
                             {% endif %}
 
                             {% for spec in openapi_spec_json %}
