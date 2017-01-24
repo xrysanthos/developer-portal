@@ -256,14 +256,14 @@ function addMessageField($message_path,$message_method)
      });
   }
 
-function processAPIsJSON($apisjsonURL)
+function processAPIsJSON($apisURL)
 {
 
   $apiHumanURL = "";
 
   $fullcount = $fullcount + 1;
 
-  var loadIt = $.getJSON($apisjsonURL, function($apisJSON) {
+  $apisJSON = jsyaml.load($apisURL);
 
     // Publish to Viewer
     $viewer = JSON.stringify($apisJSON, null, 4);
@@ -402,14 +402,13 @@ function processAPIsJSON($apisjsonURL)
         }
       });
     });
-  });
 
 }
 
-$apisjsonURL = "/apis.json";
+$apisURL = "https://raw.githubusercontent.com/adopta-agency/open-referral-miami/master/_data/apis.yaml";
 
 // Process It!!
-processAPIsJSON($apisjsonURL);
+processAPIsJSON($apisURL);
 
 </script>
 <!--<center><hr class="divide" /></center>--->
