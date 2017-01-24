@@ -261,12 +261,24 @@ function processAPIsJSON($apisURL)
 
   $fullcount = $fullcount + 1;
 
-  $( "#result" ).load($apisURL, function($data) {
+  console.log("URL: " + $apisURL);
+
+  var request = $.ajax({
+    url: $apisURL,
+    method: "GET",
+    dataType: "yaml"
+  });
+
+  request.fail(function( jqXHR, textStatus ) {
+    alert( "Request failed: " + textStatus );
+  });
+
+  request.done(function( $data ) {
 
     alert( "Load was performed." );
 
   $apisYAML = jsyaml.load($data);
-  console.log("HERE: " + $apisYAML);
+
 
   //document.getElementById("jsonViewerDetails").value = $apisYAML;
 
