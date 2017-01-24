@@ -273,7 +273,7 @@ function processAPIsJSON($apisURL)
   request.done(function( $data ) {
 
     $apisYAMLObj = jsyaml.load($data);
-    $apisYAML = $apisYAMLObj;
+    $apisYAML = $apisYAMLObj[0];
     console.log($apisYAML);
 
     document.getElementById("jsonViewerDetails").value = $apisYAML;
