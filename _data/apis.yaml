@@ -1,5 +1,5 @@
-- name: Switchboard of Miami Developers
-  description: This is a developer area for the Switchboard of Miami API. The website is an Open Referral compliant implementation. This site is currently under development.
+- name: Switchboard of Miami API
+  description: This is a developer area for the Switchboard of Miami API, providing access to the raw data behind the Switchboard of Miami website. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of Switchboard of Miami. This portal is currently under development, and is not product ready yet.
   image: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
   tags:
     - Human Services

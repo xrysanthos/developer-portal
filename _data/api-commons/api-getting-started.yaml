@@ -1,12 +1,12 @@
 - title: Getting Started
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png
-  header: I work hard to try and keep my APIs as easy to onboard, and get to work making requests in as few clicks as possible. Here are a few steps you should be considering as you are getting started using this API.
-  footer: Please get to know me if you are going to be using my APIs. While they are publicly available, they are my personal resources. Make sure you sign up for just one account, fill out your profile, and if you need more access, or have problems, please reach out.
+  header: We try to make it easy as possible to get started by providing you with a simple form to signup, and requiring keys to make each API call.
+  footer: If you encountered any problems signing up, please let us know so we can mke it smoother for other users when getting started.
   steps:
     - title: Signup for an API account
-      url: https://apievangelist.3scale.net/signup
+      url: http://developer.switchboard.miami.adopta.agency/
     - title: Add a new app to get API keys
-      url: https://apievangelist.3scale.net/admin/applications/new
+      url: http://developer.switchboard.miami.adopta.agency/
     - title: Learn about how to authenticate with APIs
       url: authentication/
     - title: Visit the API documentation page for details
