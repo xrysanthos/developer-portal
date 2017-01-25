@@ -26,3 +26,10 @@ support_twitter: apievangelist
 # Login area
 login:
 signup:
+
+# blog stuff
+permalink: /:categories/:year/:month/:day/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
+
+paginate: 150
+paginate_path: "/blog/page:num"
