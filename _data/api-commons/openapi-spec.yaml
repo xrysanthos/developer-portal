@@ -3,19 +3,17 @@
     termsOfService: https://openreferral.org/documentation/
     contact:
       url: https://openreferral.org/
-      name: Open Referral
+      name: Switchboard of Miami
       email: info@openreferral.org
-    description: This is a specification describing the Open Referral API, using the
-      Human Services Specification. This has been extracted from the Ohana API deployment,
-      but will be standardized to refer to the universal standard that will apply
-      to any Open Referral compliant API.
+    description: This is an OpenAPI definition for the Switchboard of Miami, a Human
+      Services Data Specification (HSDS) compliant API definition.
     license:
       url: http://opendatacommons.org/licenses/pddl/
       name: Open Data Commons Public Domain
     title: Switchboard Miami API
     version: v1
   paths:
-    "/locations/:locations/":
+    "/locations/:location/":
       get:
         responses:
           '200':
@@ -34,7 +32,7 @@
         operationId: get-location
         summary: Get Location
         description: Get Location
-    "/organizations/:organization_id/locations":
+    "/organizations/:organization/locations":
       get:
         responses:
           '200':
@@ -52,7 +50,7 @@
         operationId: get-location
         summary: Get Location
         description: Get Location
-    "/organizations/:organization_id":
+    "/organizations/:organization":
       get:
         responses:
           '200':

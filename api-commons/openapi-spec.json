@@ -12,11 +12,11 @@
         "url": "http://opendatacommons.org/licenses/pddl/",
         "name": "Open Data Commons Public Domain"
       },
-      "title": "Switchboard Miami API",
+      "title": "Switchboard of Miami",
       "version": "v1"
     },
     "paths": {
-      "/locations/:locations/": {
+      "/locations/:location/": {
         "get": {
           "responses": {
             "200": {
@@ -45,7 +45,7 @@
           "description": "Get Location"
         }
       },
-      "/organizations/:organization_id/locations": {
+      "/organizations/:organization/locations": {
         "get": {
           "responses": {
             "200": {
@@ -73,7 +73,7 @@
           "description": "Get Location"
         }
       },
-      "/organizations/:organization_id": {
+      "/organizations/:organization": {
         "get": {
           "responses": {
             "200": {
