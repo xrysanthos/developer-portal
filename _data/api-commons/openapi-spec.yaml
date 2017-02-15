@@ -41,7 +41,7 @@
               items:
                 "$ref": "#/definitions/location"
         tags:
-        - Locations
+        - Categories
     "/categories/{category_taxonomy_id}/children":
       get:
         summary: Get Categories Children
@@ -61,7 +61,7 @@
               items:
                 "$ref": "#/definitions/taxonomy"
         tags:
-        - Locations
+        - Categories
     "/services/{service_id}/categories":
       put:
         summary: Update Service Categories
@@ -82,7 +82,7 @@
               items:
                 "$ref": "#/definitions/location"
         tags:
-        - Locations
+        - Categories
     "/locations/{location_id}":
       get:
         summary: Locations
