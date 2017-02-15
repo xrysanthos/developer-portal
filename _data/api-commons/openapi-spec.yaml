@@ -1110,8 +1110,8 @@ definitions:
       taxonomy_ids:
         description: 'A comma separated list of identifiers from the taxonomy table.
           Advanced users may also include composite categories, using * to combine
-          two taxonomy terms. For example: ‘Food Pantry*Immigrants,Food Pantry*Homeless’
-          (where ‘Food Pantry’,’Immigrants’ and ‘Homeless’ are identifiers in the
+          two taxonomy terms. For example: Food Pantry Immigrants,Food Pantry Homeless
+          (where Food Pantry,Immigrants and Homeless are identifiers in the
           taxonomy table), would indicate a food pantry service for the homeless or
           immigrants, but not available to other client groups.'
         type: string
