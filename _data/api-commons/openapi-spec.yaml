@@ -85,7 +85,7 @@
         - Categories
     "/locations/{location_id}":
       get:
-        summary: Locations
+        summary: Location
         description: Retrieve all of the locations available in this database.
         operationId: retrieveLOrganizations
         parameters:
