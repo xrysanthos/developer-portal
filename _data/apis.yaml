@@ -10,7 +10,7 @@
     - Application Programming Interface
     - Developers
   created: '2017-01-23'
-  modified: '2017-01-23'
+  modified: '2017-02-28'
   url: http://developer.switchboard.miami.adopta.agency/apis.json
   specificationVersion: '0.14'
   apis:
@@ -18,7 +18,7 @@
     description: Switchboard of Miami data.
     image: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
     humanURL: http://developer.switchboard.miami.adopta.agency/
-    baseURL: "/"
+    baseURL: "https://miamiopen211-api.herokuapp.com"
     tags:
       - Human Services
       - Locations

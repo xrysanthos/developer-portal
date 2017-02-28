@@ -1,11 +1,11 @@
 ---
 - swagger: '2.0'
   info:
-    title: Open Referral (Jekyll) API
-    description: This is a prototype website for storing and working with data about working with human services organizations and locations.
+    title: Miami Open 211 API
+    description: This is a developer area for the Miami Open211 API, providing access to the raw data behind the Switchboard of Miami website. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of Switchboard of Miami. This portal is currently under development, and is not product ready yet.
     termsOfService: ''
     version: 1.0.0
-  host: "jekyll.open.referral.adopta.agency"
+  host: "miamiopen211-api.herokuapp.com"
   basePath: "/api"
   schemes:
     - https
@@ -15,7 +15,7 @@
     "/locations":
       get:
         summary: Locations
-        description: Retrieve all of the locations available in this database.
+        description: Retrieve all of the locations available.
         operationId: retrieveLocations
         parameters: []
         responses:
@@ -39,48 +39,7 @@
             schema:
               type: array
               items:
-                "$ref": "#/definitions/location"
-        tags:
-        - Categories
-    "/categories/{category_taxonomy_id}/children":
-      get:
-        summary: Get Categories Children
-        description: This endpoint retrieves all children categories of a specific category.
-        operationId: getCategoriesChildren
-        parameters:
-        - in: path
-          name: category_taxonomy_id
-          description: The id for the taxonmy.
-          type: string
-          default: 1
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/taxonomy"
-        tags:
-        - Categories
-    "/services/{service_id}/categories":
-      put:
-        summary: Update Service Categories
-        description: This endpoint updates a service with the specified categories.
-        operationId: updateServiceCategories
-        parameters:
-        - in: body
-          name: body
-          description: The taxonmy ids.
-          type: array
-          items:
-            "$ref": "#/definitions/taxonmies"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/location"
+                "$ref": "#/definitions/category"
         tags:
         - Categories
     "/locations/{location_id}":
@@ -154,31 +113,6 @@
                 "$ref": "#/definitions/location"
         tags:
         - Locations
-    "/locations/{location_id}/address":
-      post:
-        summary: Create New Address
-        description: This endpoint creates a new address for the specified location.
-        operationId: createAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location to delete.
-          type: string
-        - in: body
-          name: body
-          description: A JSON location in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/physical_address"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/physical_address"
-        tags:
-        - Locations
     "/locations/{location_id}/nearby":
       get:
         summary: Find Nearby Locations
@@ -212,265 +146,11 @@
                 "$ref": "#/definitions/locations"
         tags:
         - Locations
-    "/locations/{location_id}/address/{physical_address_id}":
-      delete:
-        summary: Delete Address
-        description: This endpoint deletes an existing address for a location.
-        operationId: deleteAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location which the address belongs.
-          type: string
-        - in: path
-          name: physical_address_id
-          description: The id of the phsysical address to delete.
-          type: string
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/physical_address"
-        tags:
-        - Locations
-      patch:
-        summary: Update an Existing Address
-        description: This endpoint updates an existing address for the specified location.
-        operationId: updateAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location which the address belongs.
-          type: string
-        - in: body
-          name: body
-          description: A JSON address in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/physical_address"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/physical_address"
-        tags:
-        - Locations
-    "/locations/{id}/postal_address":
-      post:
-        summary: Create New Mail Address
-        description: This endpoint creates a new postal address for the specified location.
-        operationId: createMailAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location which the postal address belongs.
-          type: string
-        - in: body
-          name: body
-          description: A JSON mail address in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/postal_address"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/postal_address"
-        tags:
-        - Locations
-    "/locations/{location_id}/mail_address/{mail_address_id}":
-      delete:
-        summary: Delete Address
-        description: This endpoint deletes an existing address.
-        operationId: deleteAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location which the mail address to delete belongs.
-          type: string
-        - in: path
-          name: mail_address_id
-          description: The id of the location mail address to delete.
-          type: string
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/mail_address"
-        tags:
-        - Locations
-      patch:
-        summary: Update an Existing Postal Address
-        description: This endpoint updates an existing postal address for the specified
-          location.
-        operationId: updatePostalAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location which the mail address to update.
-          type: string
-        - in: path
-          name: mail_address_id
-          description: The id of the location mail address to update.
-          type: string
-        - in: body
-          name: body
-          description: A JSON postal address in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/postal_address"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/postal_address"
-        tags:
-        - Locations
-    "/locations/{location_id}/contacts":
-      get:
-        summary: Contacts
-        description: Retrieve all contacts for this location
-        operationId: retrieveLContacts
-        parameters:
-        - in: query
-          name: page
-          description: The particular page of results.
-          type: string
-          default: 1
-        - in: query
-          name: per_page
-          description: Amount of locations to return per page, up to 100.
-          type: string
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/location"
-        tags:
-        - Organizations
-      post:
-        summary: Create New Contact
-        description: This endpoint creates a new contact for the specified location.
-        operationId: createContact
-        parameters:
-        - in: body
-          name: body
-          description: A JSON contact in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/contact"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/contact"
-        tags:
-        - Locations
-    "/locations/{location_id}/contacts/{contact_id}":
-      delete:
-        summary: Delete Contact
-        description: This endpoint deletes an existing contact.
-        operationId: deleteContact
-        parameters:
-        - in: path
-          name: id
-          description: The location_id of the location which the contact to delete belongs.
-          type: string
-        - in: path
-          name: contact_id
-          description: The id of the location contact to delete.
-          type: string
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/contact"
-        tags:
-        - Locations
-      patch:
-        summary: Update an Existing Contact
-        description: This endpoint updates an existing contact for the specified location.
-        operationId: updateContact
-        parameters:
-        - in: body
-          name: body
-          description: A JSON contact in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/contact"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/contact"
-        tags:
-        - Locations
     "/locations/{id}/phones":
       post:
         summary: Create New Address
         description: This endpoint creates a new phone for the specified location.
         operationId: createAddress
-        parameters:
-        - in: body
-          name: body
-          description: A JSON phone in the body.
-          type: array
-          items:
-            "$ref": "#/definitions/phone"
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/phone"
-        tags:
-        - Locations
-    "/locations/{location_id}/phones/{phone_id}":
-      delete:
-        summary: Delete Phone
-        description: This endpoint deletes an existing phone.
-        operationId: deleteAddress
-        parameters:
-        - in: path
-          name: location_id
-          description: The id of the location which the phone to delete belongs.
-          type: string
-        - in: path
-          name: location_id
-          description: The id of the location phone to delete.
-          type: string
-        responses:
-          '200':
-            description: Successful response
-            schema:
-              type: array
-              items:
-                "$ref": "#/definitions/phone"
-        tags:
-        - Locations
-      patch:
-        summary: Update an Existing Phone
-        description: This endpoint updates an existing phone for the specified location.
-        operationId: updateAddress
         parameters:
         - in: body
           name: body
