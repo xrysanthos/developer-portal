@@ -10,5 +10,5 @@
         When you make a JavaScript call to the /categories path it returns a
         CORS error. All the others work, not sure why this one would be
         different?
-      url: 'https://github.com/adopta-agency/open-referral-miami/issues/3'
+      url: 'https://github.com/miami-open-211/developer-portal/issues/3'
       date: '2017-03-01T05:46:12Z'

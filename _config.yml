@@ -1,5 +1,5 @@
 name: Miami Open 211 API
-url: http://developer.switchboard.miami.adopta.agency/
+url: http://miami.open.211.adopta.agency/
 
 author:
   name: 'Kin Lane'
@@ -14,8 +14,8 @@ post_color: 0000ff;
 put_color: FF0080;
 delete_color: FF9900;
 
-github_org: adopta-agency
-github_repo: open-referral-miami
+github_org: miami-open-211
+github_repo: developer-portal
 
 # URL to the issues page for this
 support_title: Support

@@ -1,6 +1,6 @@
 - name: Miami Open211
   description: This is a developer area for the Miami Open211 API, providing access to the raw data behind the Switchboard of Miami website. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of Switchboard of Miami. This portal is currently under development, and is not product ready yet.
-  image: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
+  image: http://miami.open.211.adopta.agency/images/switchboard-miami-logo.png
   tags:
     - Human Services
     - Locations
@@ -11,13 +11,13 @@
     - Developers
   created: '2017-01-23'
   modified: '2017-02-28'
-  url: http://developer.switchboard.miami.adopta.agency/apis.json
+  url: http://miami.open.211.adopta.agency/apis.json
   specificationVersion: '0.14'
   apis:
   - name: Miami Open211 API
     description: API access to the Miami Open211 human services data, including organizations, locations, and services.
-    image: http://developer.switchboard.miami.adopta.agency/images/switchboard-miami-logo.png
-    humanURL: http://developer.switchboard.miami.adopta.agency/
+    image: http://miami.open.211.adopta.agency/images/switchboard-miami-logo.png
+    humanURL: http://miami.open.211.adopta.agency/
     baseURL: "https://miamiopen211-api.herokuapp.com"
     tags:
       - Human Services
@@ -46,7 +46,7 @@
   - type: x-change-log
     url: change-log/
   - type: x-portal
-    url: http://developer.switchboard.miami.adopta.agency/
+    url: http://miami.open.211.adopta.agency/
   - type: x-documentation
     url: documentation/
   - type: x-faq
@@ -83,4 +83,4 @@
   maintainers:
   - FN: Greg Bloom
     x-twitter: open_referral
-    email: bloom@openreferral.org,
+    email: bloom@openreferral.org
