@@ -45,7 +45,7 @@ title: Pull
     // Le'ts try to just get the Github Repo tree
     var $yaml_store = '';
 
-    repo.getTree('gh-pages?recursive=true', function(err, tree) {
+    repo.getTree('master?recursive=true', function(err, tree) {
 
       if(err == null && $oAuthToken != null)
         {
