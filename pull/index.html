@@ -107,8 +107,8 @@ title: Pull
                 {
                 //console.log($current);
                 $yaml_store['plans'] = $current;
-                $yaml_store_string = JSON.stringify($yaml_store, null, 4);
-                
+                $yaml_store_string = JSON.stringify($current, null, 4);
+
                 console.log("YAML: " + $yaml_store_string);
                 }
 
