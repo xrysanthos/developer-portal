@@ -34,6 +34,21 @@ layout: page
       }
     $headers = $headers.substring(1, $headers.length-1);
 
+    console.log('path parameters:'+ elements.length);
+    var elements = document.getElementById($path+'-path').elements;
+    for(var i = 0, element; element = elements[i++];)
+      {
+        if(element.type === "text")
+          {
+          if(element.value!='')
+            {
+            $query_string = $query_string + element.name + '=' + element.value;
+            $replace_string = '{' + element.name + '}';
+            $api_url = $api_url.replace($replace_string,element.value);
+            }
+          }
+        }
+
     console.log('parameters:'+ elements.length);
     var elements = document.getElementById($path+'-parameters').elements;
     $anyparams = 0;
@@ -49,6 +64,7 @@ layout: page
             }
           }
         }
+
     if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
 
     console.log("loading: " + $api_url);
@@ -424,6 +440,43 @@ layout: page
                                             {% endif %}
                                             <!-- End Headers -->
                                             </form>
+
+                                            <form id="{{ slug }}-path">
+                                            <!-- Begin Path Parameters -->
+                                            {% assign number_of_parameters = parameters | size %}
+                                            {% if number_of_parameters > 0 %}
+
+                                              {% assign any_parameters = 0 %}
+                                              {% for parameter in parameters %}
+                                                {% if parameter.in == 'path' %}
+                                                  {% assign any_parameters = 1 %}
+                                                {% endif %}
+                                              {% endfor %}
+
+                                              <!-- If there are any headers -->
+                                              {% if any_headers > 0 %}
+                                                <tr style="background-color: #CCC;">
+                                                  <td style="font-size: 12px; padding: 5px;"><strong>Path Parameters:</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td align="left" style="font-size: 12px; padding: 10px;">
+                                                      <table style="width: 50%;" id="{{ slug }}-parameters">
+                                                        {% for parameter in parameters %}
+                                                          {% if parameter.in == 'path' %}
+                                                            <tr>
+                                                              <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
+                                                              <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
+                                                            </tr>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                      </table>
+                                                  </td>
+                                                </tr>
+                                              {% endif %}
+                                            {% endif %}
+                                            <!-- End Path Parameters -->
+                                            </form>
+
                                             <form id="{{ slug }}-parameters">
                                             <!-- Begin Parameters -->
                                             {% assign number_of_parameters = parameters | size %}
@@ -431,7 +484,7 @@ layout: page
 
                                               {% assign any_parameters = 0 %}
                                               {% for parameter in parameters %}
-                                                {% if parameter.in == 'query' or parameter.in == 'path' %}
+                                                {% if parameter.in == 'query' %}
                                                   {% assign any_parameters = 1 %}
                                                 {% endif %}
                                               {% endfor %}
@@ -445,7 +498,7 @@ layout: page
                                                   <td align="left" style="font-size: 12px; padding: 10px;">
                                                       <table style="width: 50%;" id="{{ slug }}-parameters">
                                                         {% for parameter in parameters %}
-                                                          {% if parameter.in == 'query' or parameter.in == 'path' %}
+                                                          {% if parameter.in == 'query' %}
                                                             <tr>
                                                               <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
                                                               <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
