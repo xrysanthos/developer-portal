@@ -7,12 +7,29 @@ title: Pull
 
 <script type="text/javascript">
 
-    $filter_tag = 'road map';
-
     // Reset the cookie manually
     //Cookies.expire('token');
 
     var $oAuthToken = getUrlVar('token');
+    var $label = getUrlVar('label');
+
+    if($label=='issues')
+      {
+      $data_store = '_data/api-commons/api-issues.yaml';
+      }
+
+    if($label=='road map')
+      {
+      $data_store = '_data/api-commons/api-road-map.yaml';
+      }
+
+    if($label=='change log')
+      {
+      $data_store = '_data/api-commons/api-change-log.yaml';
+      }
+
+    $filter_tag = $label;
+
     var $yaml_store = "";
 
     // When you fork, make sure ad add your org / user and repo name to _config.yml
@@ -50,11 +67,13 @@ title: Pull
       if(err == null && $oAuthToken != null)
         {
           // If no error we have access, read YAML store
-          repo.read('master', '_data/api-commons/api-road-map.yaml', function(err, data) {
+          repo.read('master', $data_store, function(err, data) {
 
             $yaml_store_array = jsyaml.load(data);
             $yaml_store = $yaml_store_array[0];
 
+            $dump = JSON.stringify($yaml_store, null, 4);
+            console.log($dump);
             var issues = github.getIssues($org,$repo);
 
             $options = {};
@@ -110,14 +129,14 @@ title: Pull
                 $y['footer'] = $yaml_store['footer'];
                 $y['plans'] = $current;
                 //$yaml_dump = JSON.stringify($y, null, 4);
-                
+
                 $yaml_dump = jsyaml.dump($y);
                 var writerepo = github.getRepo($org,$repo);
                 writerepo.getTree('master?recursive=true', function(err, writetree) {
 
                   $.each(writetree, function(treeKey, treeValue) {
 
-                    $writepath = '_data/api-commons/api-road-map.yaml';
+                    $writepath = $data_store;
                     $path = treeValue['path'];
                     $sha = treeValue['sha'];
                     //console.log($path + ' == ' + $writepath);
