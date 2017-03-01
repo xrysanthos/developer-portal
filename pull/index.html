@@ -53,8 +53,6 @@ title: Pull
           repo.read('gh-pages', '_data/api-commons/api-road-map.yaml', function(err, data) {
 
             $yaml_store = jsyaml.load(data);
-            $yaml_store_string = JSON.stringify($yaml_store, null, 4);
-          //  console.log("Yaml" + $yaml_store_string);
 
             var issues = github.getIssues($org,$repo);
 
@@ -104,12 +102,12 @@ title: Pull
 
               if($issue_count==$total_issues)
                 {
-                console.log("title: " + $yaml_store['title']);
+                console.log("title: " + $yaml_store.title);
                 $y = {};
-                $y['title'] = $yaml_store['title'];
-                $y['image'] = $yaml_store['image'];
-                $y['header'] = $yaml_store['header'];
-                $y['footer'] = $yaml_store['footer'];
+                $y['title'] = $yaml_store.title;
+                $y['image'] = $yaml_store.image;
+                $y['header'] = $yaml_store.header;
+                $y['footer'] = $yaml_store.footer;
 
                 $store_string = JSON.stringify($y, null, 4);
 
