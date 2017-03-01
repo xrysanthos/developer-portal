@@ -7,6 +7,8 @@ title: Pull
 
 <script type="text/javascript">
 
+    $filter_tag = 'road map';
+
     // Reset the cookie manually
     //Cookies.expire('token');
 
@@ -37,7 +39,7 @@ title: Pull
     var issues = github.getIssues($org,$repo);
 
     $options = {};
-    $options['labels'] = 'issues';
+    $options['labels'] = $filter_tag;
 
     var issue = issues.list($options,function(err,issues) {
 
@@ -53,7 +55,7 @@ title: Pull
 
         $.each($labels, function(labelKey, labelValue) {
           $label_name = labelValue.name;
-          if($label_name == 'issues')
+          if($label_name == $filter_tag)
             {
             console.log($label_name);
             console.log($title);
