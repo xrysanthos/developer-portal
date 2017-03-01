@@ -335,7 +335,7 @@ layout: page
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'header' %}
                                                             <tr>
-                                                              <td><strong>{{ parameter.name }}:</strong></td>
+                                                              <td style="width: 35%;"><strong>{{ parameter.name }}:</strong></td>
                                                               <td><input type="text" name="" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
@@ -369,7 +369,7 @@ layout: page
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'query' || parameter.in == 'path' %}
                                                             <tr>
-                                                              <td><strong>{{ parameter.name }}:</strong></td>
+                                                              <td style="width: 35%;"><strong>{{ parameter.name }}:</strong></td>
                                                               <td><input type="text" name="" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
