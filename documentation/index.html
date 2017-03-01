@@ -559,7 +559,7 @@ layout: page
                             {% assign definition_name = definition[0] %}
                             {% assign fields = definition[1] %}
                             <tr>
-                              <td style="padding-left: 10px; padding-top: 10px;">
+                              <td style="padding-left: 10px; padding-top: 10px;" colspan='4'>
                                 <strong>{{ definition_name }}</strong>
                                 <ul style='padding-left: 25px; margin-top:5px;'>
                                   {% for property in fields.properties %}
@@ -568,10 +568,6 @@ layout: page
                                   {% endfor %}
                                 </ul>
                               </td>
-                              <td align="right" style="padding: 10px;"></td>
-                              <td align="right" style="padding: 10px;"></td>
-                              <td align="right" style="padding: 10px;"></td>
-                              <td align="right" style="padding: 10px;"></td>
                             </tr>
                           {% endfor %}
                         {% endfor %}
