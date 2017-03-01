@@ -36,7 +36,7 @@ layout: page
 
     console.log('parameters:'+ elements.length);
     var elements = document.getElementById($path+'-parameters').elements;
-    if(elements.length > 0){ $api_url = $api_url + '?'; }
+    $anyparams = 0;
     for(var i = 0, element; element = elements[i++];)
       {
         if(element.type === "text")
@@ -44,9 +44,11 @@ layout: page
           if(element.value!='')
             {
             $api_url = $api_url + element.name + '=' + element.value;
+            $anyparams = 1;
             }
           }
         }
+    if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?'; }
 
     console.log("loading: " + $api_url);
 
