@@ -75,7 +75,7 @@ title: Pull
             $yaml_store = $yaml_store_array[0];
 
             $dump = JSON.stringify($yaml_store, null, 4);
-            console.log($dump);
+            //console.log($dump);
             var issues = github.getIssues($org,$repo);
 
             $options = {};
@@ -103,9 +103,6 @@ title: Pull
                   $label_name = labelValue.name;
                   if($label_name == $filter_tag)
                     {
-                    console.log($label_name);
-                    console.log($title);
-
                     $c = {};
                     $c['title'] = $title
                     $c['description'] = $body;
@@ -113,7 +110,6 @@ title: Pull
                     $c['date'] = $updated_at;
 
                     $entries.push($c);
-
                     }
 
                   });
