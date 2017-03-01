@@ -443,15 +443,15 @@ layout: page
                                             {% assign number_of_parameters = parameters | size %}
                                             {% if number_of_parameters > 0 %}
 
-                                              {% assign any_parameters = 0 %}
+                                              {% assign any_path_parameters = 0 %}
                                               {% for parameter in parameters %}
                                                 {% if parameter.in == 'path' %}
-                                                  {% assign any_parameters = 1 %}
+                                                  {% assign any_path_parameters = 1 %}
                                                 {% endif %}
                                               {% endfor %}
 
                                               <!-- If there are any headers -->
-                                              {% if any_headers > 0 %}
+                                              {% if any_path_parameters > 0 %}
                                                 <tr style="background-color: #CCC;">
                                                   <td style="font-size: 12px; padding: 5px;"><strong>Path Parameters:</strong></td>
                                                 </tr>
@@ -487,7 +487,7 @@ layout: page
                                               {% endfor %}
 
                                               <!-- If there are any headers -->
-                                              {% if any_headers > 0 %}
+                                              {% if any_parameters > 0 %}
                                                 <tr style="background-color: #CCC;">
                                                   <td style="font-size: 12px; padding: 5px;"><strong>Parameters:</strong></td>
                                                 </tr>
