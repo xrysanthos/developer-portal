@@ -293,6 +293,9 @@ layout: page
                                     {% assign summary = method[1].summary %}
 
                                     {% if tag == grouptag %}
+
+                                      {% assign slug = path[0] | replace: '/','' %}
+
                                       <tr>
                                         <td style="padding-left: 20px; font-size: 12px;">{{ summary }}</td>
                                         <td style="font-size: 12px;">{{ path[0] }}</td>
@@ -300,25 +303,25 @@ layout: page
                                           {{ verb }}
                                         </td>
                                         <td>
-                                          <a href=""><strong>TRY</strong></a>
+                                          <a href="#" onclick="showme('{{ slug }}-row'); return false;"><strong>TRY</strong></a>
                                         </tr>
                                       </tr>
-                                      <tr>
+                                      <tr id="{{ slug }}-row">
                                         <td colspan="4">
-                                          <table width="100%" border="1">
-                                            <tr>
+                                          <table width="80%" border="1" align="center">
+                                            <tr style="background-color: #CCC;">
                                               <td><strong>Headers:</strong></td>
                                             </tr>
                                             <tr>
                                               <td align="center">[put parameters here]</td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background-color: #CCC;">
                                               <td><strong>Parameters:</strong></td>
                                             </tr>
                                             <tr>
                                               <td align="center">[put parameters here]</td>
                                             </tr>
-                                            <tr>
+                                            <tr style="background-color: #CCC;">
                                               <td><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
