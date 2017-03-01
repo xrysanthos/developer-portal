@@ -10,14 +10,8 @@ title: Code
 <p><img src="{{ apicode.image }}" align="right" width="75" style="padding: 5px;" /></p>
 <p>{{ apicode.header }}</p>
 <center>
-<table cellpadding="10" cellspacing="10" width="90%" style="margin-bottom: 10px;">
-	{% for current in apicode.entries %}
-    <tr>
-  		<td align="left" valign="top">
-  			({{ current.date | date: "%D" }}) <strong>{{ current.title }}</strong> - {{ current.description }}
-  		</td>
-    </tr>
+	{% for entry in apicode.entries %}
+    {{ entry.icon }}
 	{% endfor %}
-</table>
 </center>
 <p>{{ apicode.footer }}</p>
