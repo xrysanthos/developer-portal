@@ -318,7 +318,7 @@ layout: page
                                               {% assign any_headers = 0 %}
                                               {% for parameter in parameters %}
                                                 {% if parameter.in == 'header' %}
-                                                  % assign any_headers = 1 %}
+                                                  {% assign any_headers = 1 %}
                                                 {% endif %}
                                               {% endfor %}
 
