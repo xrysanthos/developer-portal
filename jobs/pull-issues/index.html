@@ -81,7 +81,7 @@ title: Pull
             $options = {};
             $options['labels'] = $filter_tag;
 
-            $current = [];
+            $entries = [];
 
             var issue = issues.list($options,function(err,issues) {
 
@@ -112,7 +112,7 @@ title: Pull
                     $c['url'] = $html_url;
                     $c['date'] = $updated_at;
 
-                    $current.push($c);
+                    $entries.push($c);
 
                     }
 
@@ -129,7 +129,7 @@ title: Pull
                 $y['image'] = $yaml_store['image'];
                 $y['header'] = $yaml_store['header'];
                 $y['footer'] = $yaml_store['footer'];
-                $y['plans'] = $current;
+                $y['entries'] = $entries;
                 //$yaml_dump = JSON.stringify($y, null, 4);
 
                 $yaml_dump = jsyaml.dump($y);
