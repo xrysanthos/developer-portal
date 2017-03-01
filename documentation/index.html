@@ -44,12 +44,12 @@ layout: page
           {
           if(element.value!='')
             {
-            $query_string = $$query_string + element.name + '=' + element.value;
+            $query_string = $query_string + element.name + '=' + element.value;
             $anyparams = 1;
             }
           }
         }
-    if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?'+$query_string; }
+    if(elements.length > 0 && $anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
 
     console.log("loading: " + $api_url);
 
