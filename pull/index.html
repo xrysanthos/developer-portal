@@ -44,7 +44,9 @@ title: Pull
 
       //console.log("issues: " + issues);
       $.each(issues, function(issueKey, issueValue) {
-        console.log(issueKey + " = " + issueValue);
+        $.each(issueValue, function(issueKey2, issueValue2) {
+          console.log(issueKey2 + " = " + issueValue2);
+          });
         });
 
     });
