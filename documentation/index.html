@@ -399,7 +399,7 @@ layout: page
 
                                               {% assign any_parameters = 0 %}
                                               {% for parameter in parameters %}
-                                                {% if parameter.in == 'query' || parameter.in == 'path' %}
+                                                {% if parameter.in == 'query' OR parameter.in == 'path' %}
                                                   {% assign any_parameters = 1 %}
                                                 {% endif %}
                                               {% endfor %}
@@ -413,7 +413,7 @@ layout: page
                                                   <td align="left" style="font-size: 12px; padding: 10px;">
                                                       <table style="width: 50%;" id="{{ slug }}-parameters">
                                                         {% for parameter in parameters %}
-                                                          {% if parameter.in == 'query' || parameter.in == 'path' %}
+                                                          {% if parameter.in == 'query' OR parameter.in == 'path' %}
                                                             <tr>
                                                               <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
                                                               <td><input type="text" name="" value="" style="width: 100%;" /></td>
