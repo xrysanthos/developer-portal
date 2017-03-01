@@ -33,6 +33,7 @@ title: Pull
     // Grab the token from cookie
     $oAuthToken = Cookies.get('token');
 
+    console.log("token: " + $oAuthToken);
     var github = new Github({token: $oAuthToken,auth: "oauth"});
     var issues = github.getIssues($org,$repo);
 
