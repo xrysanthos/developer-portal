@@ -19,3 +19,7 @@
           answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         - question: Can I talk to you on the phone?
           answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - category: Management
+      questions:
+        - question: How do I edit the home page of the Miami Open211 API portal?
+          answer: The home page of the developer portal is entirely dynamic and generated using the <a href="https://github.com/adopta-agency/open-referral-miami/blob/master/_data/apis.yaml">APIs.json (yaml) for this project</a>.         
