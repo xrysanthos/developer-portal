@@ -37,6 +37,9 @@ title: Pull
     var issues = github.getIssues($org,$repo);
 
     console.log("HERE:" + issues);
+    $.each(issues, function(issueKey, issueValue) {
+      console.log(issueKey + ' = ' + issueValue);
+      });
 
 
 </script>
