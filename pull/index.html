@@ -109,8 +109,9 @@ title: Pull
                 $y['header'] = $yaml_store['header'];
                 $y['footer'] = $yaml_store['footer'];
                 $y['plans'] = $current;
-                $yaml_dump = JSON.stringify($y, null, 4);
-
+                //$yaml_dump = JSON.stringify($y, null, 4);
+                
+                $yaml_dump = jsyaml.dump($y);
                 var writerepo = github.getRepo($org,$repo);
                 writerepo.getTree('master?recursive=true', function(err, writetree) {
 
