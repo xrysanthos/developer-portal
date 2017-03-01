@@ -32,7 +32,8 @@ layout: page
 
             $viewer = JSON.stringify(response, null, 2);
             console.log($viewer);
-            document.getElementById($path+"-response").innerHTML = $viewer;
+            document.getElementById($path+"-response").value = $viewer;
+            document.getElementById($path+"-response").style.width = "100%";
             document.getElementById($path+"-response").style.height = "450px";
 
         },
@@ -426,7 +427,7 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td style="font-size: 12px; padding: 10px;">
-                                                <div id="{{ slug }}-response" style="overflow: auto;"></div>
+                                                <textarea id="{{ slug }}-response" style="overflow: auto;"></textarea>
                                               </td>
                                             </tr>
 
