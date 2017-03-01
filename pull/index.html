@@ -37,7 +37,7 @@ title: Pull
     var issues = github.getIssues($org,$repo);
 
     $options = {};
-    $options['labels'] = 'road map';
+    $options['labels'] = 'issues';
 
     var issue = issues.list($options,function(err,issues) {
 
