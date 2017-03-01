@@ -1,5 +1,5 @@
 ---
 layout: none
 ---
-
-{{ site.data.api-commons.openapi-spec | json }}
+{% assign show_json = site.data.api-commons.openapi-spec | json %}
+{{ show_json }}
