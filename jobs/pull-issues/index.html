@@ -124,7 +124,7 @@ title: Pull
 
               if($issue_count==$total_issues)
                 {
-                $y = [];
+                $y = {};
                 $y['title'] = $yaml_store['title'];
                 $y['image'] = $yaml_store['image'];
                 $y['header'] = $yaml_store['header'];
@@ -132,6 +132,9 @@ title: Pull
                 $y['entries'] = $entries;
                 //$yaml_dump = JSON.stringify($y, null, 4);
 
+                $z = [];
+                $z = $y;
+                
                 $yaml_dump = jsyaml.dump($y);
                 var writerepo = github.getRepo($org,$repo);
                 writerepo.getTree('master?recursive=true', function(err, writetree) {
