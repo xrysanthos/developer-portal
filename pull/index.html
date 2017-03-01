@@ -106,9 +106,14 @@ title: Pull
               if($issue_count==$total_issues)
                 {
                 //console.log($current);
-                $yaml_store['plans'] = {};
-                $yaml_store['plans'] = $current;
-                $yaml_store_string = JSON.stringify($yaml_store, null, 4);
+                $yaml_store_2 = {};
+                $yaml_store_2['title'] = $yaml_store['title'];
+                $yaml_store_2['image'] = $yaml_store['image'];
+                $yaml_store_2['header'] = $yaml_store['header'];
+                $yaml_store_2['footer'] = $yaml_store['footer'];
+                $yaml_store_2['plans'] =  $current;
+
+                $yaml_store_string = JSON.stringify($yaml_store_2, null, 4);
 
                 console.log("YAML: " + $yaml_store_string);
                 }
