@@ -40,6 +40,7 @@ layout: page
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
+            document.getElementById($path+'-loading').style.display = 'none';
             $message = "Status: " + textStatus + "\nError: " + errorThrown;
             document.getElementById($path+"-response").value = $$message;
             document.getElementById($path+"-response").style.width = "100%";
