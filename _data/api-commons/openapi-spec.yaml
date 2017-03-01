@@ -18,6 +18,11 @@
         description: Retrieve all of the locations available.
         operationId: retrieveLocations
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'          
           - name: page
             in: query
             type: string
