@@ -34,9 +34,8 @@ layout: page
       }
     $headers = $headers.substring(1, $headers.length-1);
 
-    console.log('path parameters:'+ elements.length);
-    var elements = document.getElementById($path+'-path').elements;
-    for(var i = 0, element; element = elements[i++];)
+    var path_elements = document.getElementById($path+'-path').elements;
+    for(var i = 0, element; element = path_elements[i++];)
       {
         if(element.type === "text")
           {
@@ -48,11 +47,11 @@ layout: page
           }
         }
 
-    console.log('parameters:'+ elements.length);
-    var elements = document.getElementById($path+'-parameters').elements;
+
+    var param_elements = document.getElementById($path+'-parameters').elements;
     $anyparams = 0;
     $query_string = '';
-    for(var i = 0, element; element = elements[i++];)
+    for(var i = 0, element; element = param_elements[i++];)
       {
         if(element.type === "text")
           {
