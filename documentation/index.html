@@ -311,25 +311,33 @@ layout: page
                                       <tr id="{{ slug }}-row" style="display: none;">
                                         <td colspan="4">
                                           <table width="90%" border="0" align="center">
-                                            <tr style="background-color: #CCC;">
-                                              <td style="font-size: 12px; padding: 5px;"><strong>Headers:</strong></td>
-                                            </tr>
-                                            <tr>
-                                              <td align="center"style="font-size: 12px; padding: 10px;">
-                                                {% assign number_of_parameters = parameters | size %}
-                                                {{ number_of_parameters }}
-                                                {% if number_of_parameters > 0 %}
-                                                  <table>
-                                                    {% for parameter in parameters %}
-                                                      <tr>
-                                                        <td><strong>{{ parameter.in }}:</strong></td>
-                                                        <td><input type="text" name="" value="" style="width: 100%;" /></td>
-                                                      </tr>
-                                                    {% endfor %}
-                                                  </table>
+                                            {% assign number_of_parameters = parameters | size %}
+                                            {{ number_of_parameters }}
+                                            {% if number_of_parameters > 0 %}
+
+                                              {% assign any_headers = 0 %}
+                                              {% for parameter in parameters %}
+                                                {% if parameter.in == 'header' %}
+                                                  % assign any_headers = 1 %}
                                                 {% endif %}
-                                              </td>
-                                            </tr>
+                                              {% endfor %}
+
+                                              <tr style="background-color: #CCC;">
+                                                <td style="font-size: 12px; padding: 5px;"><strong>Headers: {{ any_headers }}</strong></td>
+                                              </tr>
+                                              <tr>
+                                                <td align="left" style="font-size: 12px; padding: 10px;">
+                                                    <table style="width: 50%;">
+                                                      {% for parameter in parameters %}
+                                                        <tr>
+                                                          <td><strong>{{ parameter.name }}:</strong></td>
+                                                          <td><input type="text" name="" value="" style="width: 100%;" /></td>
+                                                        </tr>
+                                                      {% endfor %}
+                                                    </table>
+                                                </td>
+                                              </tr>
+                                            {% endif %}
                                             <tr style="background-color: #CCC;">
                                               <td style="font-size: 12px; padding: 5px;"><strong>Parameters:</strong></td>
                                             </tr>
