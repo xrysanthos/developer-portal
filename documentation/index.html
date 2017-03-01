@@ -25,9 +25,9 @@ layout: page
     var elements = document.getElementById($path+'-form').elements;
 
     for (var i = 0, element; element = elements[i++];) {
-        if (element.type === "text" && element.value === "")
+        if (element.type === "text")
           {
-          console.log(element.type + ' - ' + element.id + ' - ' + element.name + ' - ' + element.value);
+          console.log(element.type + ' - ' + element.name);
         }
       }
 
@@ -393,7 +393,7 @@ layout: page
                                                           {% if parameter.in == 'header' %}
                                                             <tr>
                                                               <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td><input type="text" name="" value="" style="width: 100%;" /></td>
+                                                              <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
                                                         {% endfor %}
@@ -427,7 +427,7 @@ layout: page
                                                           {% if parameter.in == 'query' or parameter.in == 'path' %}
                                                             <tr>
                                                               <td style="width: 35%;" align="right"><strong>{{ parameter.name }}:</strong></td>
-                                                              <td><input type="text" name="" value="" style="width: 100%;" /></td>
+                                                              <td><input type="text" name="{{ parameter.name }}" value="" style="width: 100%;" /></td>
                                                             </tr>
                                                           {% endif %}
                                                         {% endfor %}
