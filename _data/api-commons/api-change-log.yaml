@@ -4,12 +4,12 @@
     This is a detailed log of the changes that have been made to the Switchboard
     of Miami API.
   footer: >-
-    This change log is just pulling from the Github issues that are tagged change
-    log.
+    This change log is just pulling from the Github issues that are tagged
+    change log.
   entries:
     - title: Updated OpenAPI Spec
       description: >-
-        I updated the OpenAPI Spec to have the latest paths supported, and putting
-        write paths in background until we are ready.
+        I updated the OpenAPI Spec to have the latest paths supported, and
+        putting write paths in background until we are ready.
       url: 'https://github.com/adopta-agency/open-referral-miami/issues/2'
       date: '2017-03-01T08:16:31Z'
