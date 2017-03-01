@@ -4,10 +4,10 @@
   footer: We encourage you to get involved with the project beyond just consuming data. You can connect with the API platform team, as well as the rest of the community using the support page--thank you for you help!
   steps:
     - title: Visit the API documentation
-      url: documentation/
+      url: /documentation/
     - title: Download the Postman collection
-      url: postman_collection.json
+      url: /postman_collection.json
     - title: Visit the code section
-      url: code/
+      url: /code/
     - title: Submit any issues you have
       url: https://github.com/miami-open-211/developer-portal/issues
