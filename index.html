@@ -115,45 +115,6 @@ layout: page
       {{ apijson.description }}
     </td>
   </tr>
-  <!--
-  <tr>
-    <td colspan="2" align="center" style="margin-left: 25px; margin-right: 25px;" valign="top">
-      <ul style="list-style: none; display: inline;">
-        {% if blog_url != null %}
-          <li style="display: inline; padding-left: 15px; padding-right: 15px;">
-            <a href="{{ blog_url }}" target="_blank" title="Blog">
-              <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-blog-icon.png" width="36" align="center" />
-            </a>
-          </li>
-        {% endif %}
-        {% if blog_rss_url != null %}
-          <li style="display: inline; padding-left: 15px; padding-right: 15px;">
-            <a href="{{ blogrss_url }}" target="_blank" title="Blog RSS">
-              <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" width="36" align="center" />
-            </a>
-          </li>
-        {% endif %}
-
-        {% if twitter_url != null %}
-          <li style="display: inline; padding-left: 15px; padding-right: 15px;">
-            <a href="{{ twitter_url }}" target="_blank" title="Twitter">
-              <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png" width="51" align="center" />
-            </a>
-          </li>
-        {% endif %}
-
-        {% if gitub_url != null %}
-          <li style="display: inline; padding-left: 15px; padding-right: 15px;">
-            <a href="{{ gitub_url }}" target="_blank" title="Github">
-              <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-icon.png" width="58" align="center" />
-            </a>
-          </li>
-        {% endif %}
-
-      </ul>
-    </td>
-  </tr>
--->
   <tr>
     <td width="50%" align="center" valign="top">
       <table cellpadding="5" cellspacing="5" border="0" width="85%" id="jsonBrowserTable" style="margin-left: 15px;margin-top:15px;">
@@ -184,15 +145,15 @@ layout: page
         {% if signup_url != null %}
 				<tr id="x-signup-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="{{ signup_url }}" id="x-signup-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-signup.png" width="35" /></a></td>
-					<td><a href="{{ signup_url }}" id="x-signup-url">Signup</a><div id="d-signup"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ signup_url }}" id="x-signup-img-url" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-signup.png" width="35" /></a></td>
+					<td><a href="{{ signup_url }}" id="x-signup-url" target="_blank">Signup</a><div id="d-signup"></div></td>
 				</tr>
         {% endif %}
         {% if login_url != null %}
 				<tr id="x-login-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="{{ login_url }}" id="x-login-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-login.png" width="35" /></a></td>
-					<td><a href="{{ login_url }}" id="x-login-url">Login</a><div id="d-login"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ login_url }}" id="x-login-img-url" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-login.png" width="35" /></a></td>
+					<td><a href="{{ login_url }}" id="x-login-url" target="_blank">Login</a><div id="d-login"></div></td>
 				</tr>
         {% endif %}
 				<tr id="integration">
@@ -382,7 +343,10 @@ layout: page
 
                             {% for spec in openapi_spec_json %}
                               {% for path in spec.paths %}
+
+                                {% assign path_name = path[0] %}
                                 {% assign method_json = path[1] %}
+
                                 {% for method in method_json %}
 
                                   {% assign tagarray = method[1].tags %}
@@ -409,6 +373,7 @@ layout: page
                                       <li style="font-size: 12px;">
                                         <span style="color:#000;">{{ summary }}</span>
                                         (<span style="color:#{{ back_color }}; font-weight:bold;">{{ verb }}</span>)
+                                        <span style="color:#000;">{{ path_name }}</span>
                                       </li>
                                     {% endif %}
                                   {% endif %}

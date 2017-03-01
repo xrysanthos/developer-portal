@@ -58,19 +58,23 @@
   - type: x-issues
     url: issues/
   - type: x-login
-    url: http://developer.switchboard.miami.adopta.agency/
+    url: https://miamiopen211-api.herokuapp.com/users/sign_in
   - type: x-privacy-policy-page
     url: privacy-policy/
   - type: x-road-map
     url: road-map/
   - type: x-selfservice-registration
-    url: http://developer.switchboard.miami.adopta.agency/
+    url: https://miamiopen211-api.herokuapp.com/users/sign_up
   - type: x-status-dashboard
     url: status/
   - type: x-support-overview-page
     url: support/
   - type: x-terms-of-service-page
     url: terms-of-service/
+  - type: x-twitter
+    url: https://twitter.com/apievangelist
+  - type: x-twitter
+    url: https://twitter.com/apievangelist
   - type: x-twitter
     url: https://twitter.com/apievangelist
   include: []
