@@ -16,7 +16,7 @@ layout: page
 
    function getRequest($path)
     {
-    alert('running!');
+    alert('running - ' + $path);
     }
 </script>
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 0px;">
@@ -393,7 +393,9 @@ layout: page
                                               <td align="center" style="font-size: 12px; padding: 10px;" id="{{ slug }}-response">[put response here]</td>
                                             </tr>
                                             <tr>
-                                              <td align="center"s tyle="font-size: 12px; padding: 25px;"><button type="button" class="btn btn-success">Make API Request</button></td>
+                                              <td align="center"s tyle="font-size: 12px; padding: 25px;">
+                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}');">Make API Request</button>
+                                              </td>
                                             </tr>
                                           </table>
                                         </td>
