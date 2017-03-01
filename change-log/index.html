@@ -10,7 +10,7 @@ layout: page
 <p>{{ apichangelog.header }}</p>
 <center>
 <table cellpadding="10" cellspacing="10" width="90%" style="margin-bottom: 10px;">
-	{% for history in apichangelog.history %}
+	{% for history in apichangelog.entries %}
     <tr>
   		<td align="left" valign="top">
   			({{ history.date | date: "%D" }}) <strong>{{ history.title }}</strong> - {{ history.description }}
