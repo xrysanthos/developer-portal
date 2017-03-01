@@ -42,7 +42,6 @@ layout: page
           {
           if(element.value!='')
             {
-            $query_string = $query_string + element.name + '=' + element.value;
             $replace_string = '{' + element.name + '}';
             $api_url = $api_url.replace($replace_string,element.value);
             }
