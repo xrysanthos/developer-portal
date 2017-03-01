@@ -286,9 +286,7 @@ layout: page
                               {% assign api_url = api_host | prepend:'https://' %}
                               {% assign api_url = api_url | append:api_base %}
                               {% assign api_url = api_url | append:'/' %}
-
-                              api_url: {{ api_url }}<br />
-
+            
                               {% for path in spec.paths %}
 
                                 {% assign this_path = path[0] %}
