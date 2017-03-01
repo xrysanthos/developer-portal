@@ -45,7 +45,9 @@ title: Pull
 
     var issue = issues.list($options,function(err,issues) {
 
-      console.log("num of issues: " + issues.length);
+      $total_issues = issues.length;
+      $issue_count = 0;
+
       $.each(issues, function(issueKey, issueValue) {
 
         $html_url = issueValue.html_url;
@@ -57,6 +59,7 @@ title: Pull
         $updated_at = issueValue.updated_at;
 
         $.each($labels, function(labelKey, labelValue) {
+
           $label_name = labelValue.name;
           if($label_name == $filter_tag)
             {
@@ -72,8 +75,17 @@ title: Pull
             $current.push($c);
 
             }
+
+          $issue_count++;
+
           });
+
         });
+
+      if($issue_count==$total_issues)
+        {
+        console.log($current);
+        }
 
     });
 
