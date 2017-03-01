@@ -278,9 +278,11 @@ layout: page
                               {% assign api_host = spec.host %}
                               {% assign api_base = spec.basePath %}
 
-                              api_title: {{ api_title }}<br />
-                              api_title: {{ api_host }}<br />
-                              api_title: {{ api_base }}<br />
+                              {% assign api_url = api_host | prepend:'https://' %}
+                              {% assign api_url = api_url | append:'/' %}
+                              {% assign api_url = api_url | append:api_base %}
+
+                              api_url: {{ api_url }}<br />
 
                               {% for path in spec.paths %}
 
