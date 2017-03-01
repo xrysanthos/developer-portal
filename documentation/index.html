@@ -22,7 +22,8 @@ layout: page
     console.log("loading: " + $api_url);
     document.getElementById($path+'-loading').style.display = '';
 
-    var elements = document.getElementById($path+'-form').elements;
+    console.log('headers:');
+    var elements = document.getElementById($path+'-headers').elements;
 
     for (var i = 0, element; element = elements[i++];) {
         if (element.type === "text")
@@ -31,6 +32,15 @@ layout: page
         }
       }
 
+    console.log('parameters:');
+    var elements = document.getElementById($path+'-parameters').elements;
+
+    for (var i = 0, element; element = elements[i++];) {
+        if (element.type === "text")
+          {
+          console.log(element.type + ' - ' + element.name);
+        }
+      }
 
     var response = $.ajax({
        url: $api_url,
@@ -366,9 +376,10 @@ layout: page
                                       </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
                                         <td colspan="4" style="padding: 15px;">
-                                          <form id="{{ slug }}-form">
+
                                           <table width="90%" border="0" align="center">
 
+                                            <form id="{{ slug }}-headers">
                                             <!-- Begin Headers -->
                                             {% assign number_of_parameters = parameters | size %}
 
@@ -403,7 +414,8 @@ layout: page
                                               {% endif %}
                                             {% endif %}
                                             <!-- End Headers -->
-
+                                            </form>
+                                            <form id="{{ slug }}-parameters">
                                             <!-- Begin Parameters -->
                                             {% assign number_of_parameters = parameters | size %}
                                             {% if number_of_parameters > 0 %}
@@ -437,6 +449,7 @@ layout: page
                                               {% endif %}
                                             {% endif %}
                                             <!-- End Parameters -->
+                                            </form>
 
                                             <tr style="background-color: #CCC;">
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
@@ -457,7 +470,6 @@ layout: page
                                               </td>
                                             </tr>
                                           </table>
-                                          </form>
                                         </td>
                                       </tr>
                                     {% endif %}
