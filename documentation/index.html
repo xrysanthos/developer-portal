@@ -19,28 +19,34 @@ layout: page
     {
 
     $api_url = $url + $path;
-    console.log("loading: " + $api_url);
+
     document.getElementById($path+'-loading').style.display = '';
 
     console.log('headers:');
     var elements = document.getElementById($path+'-headers').elements;
-
+    $headers = '';
     for (var i = 0, element; element = elements[i++];) {
         if (element.type === "text")
           {
           console.log(element.type + ' - ' + element.name);
+          $headers = $headers + element.name + ': ' + element.value + ',';
         }
       }
+    $headers = $headers.substring(1, $headers.length-1);
 
     console.log('parameters:');
     var elements = document.getElementById($path+'-parameters').elements;
-
-    for (var i = 0, element; element = elements[i++];) {
+    if(elements.lenth > 0){ $api_url = $api_url + "?"; }
+    for (var i = 0, element; element = elements[i++];)
+      {
         if (element.type === "text")
           {
           console.log(element.type + ' - ' + element.name);
+          $api_url = $api_url + element.name + '=' + element.value;
+          }
         }
-      }
+
+    console.log("loading: " + $api_url);
 
     var response = $.ajax({
        url: $api_url,
