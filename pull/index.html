@@ -33,7 +33,6 @@ title: Pull
     // Grab the token from cookie
     $oAuthToken = Cookies.get('token');
 
-    console.log("token: " + $oAuthToken);
     var github = new Github({token: $oAuthToken,auth: "oauth"});
     var issues = github.getIssues($org,$repo);
 
@@ -44,9 +43,15 @@ title: Pull
 
       //console.log("issues: " + issues);
       $.each(issues, function(issueKey, issueValue) {
-        $.each(issueValue, function(issueKey2, issueValue2) {
-          console.log(issueKey2 + " = " + issueValue2);
-          });
+
+        $html_url = issueValue.html_url;
+        $number = issueValue.number;
+        $state = issueValue.state;
+        $title = issueValue.title;
+        $updated_at = issueValue.updated_at;
+
+        console.log($title);
+
         });
 
     });
