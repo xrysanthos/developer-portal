@@ -36,13 +36,15 @@ layout: page
 
     console.log('parameters:');
     var elements = document.getElementById($path+'-parameters').elements;
-    if(elements.lenth > 0){ $api_url = $api_url + "?"; }
+    if(elements.length > 0){ $api_url = $api_url + '?'; }
     for (var i = 0, element; element = elements[i++];)
       {
         if (element.type === "text")
           {
-          console.log(element.type + ' - ' + element.name);
-          $api_url = $api_url + element.name + '=' + element.value;
+          if(element.value!='')
+            {
+            $api_url = $api_url + element.name + '=' + element.value;
+            }
           }
         }
 
