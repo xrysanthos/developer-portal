@@ -299,6 +299,33 @@ layout: page
                                         <td align="center" style="padding: 5px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
                                           {{ verb }}
                                         </td>
+                                        <td>
+                                          <a href=""><strong>TRY</strong></a>
+                                        </tr>
+                                      </tr>
+                                      <tr>
+                                        <td colspan="4">
+                                          <table width="100%" border="1">
+                                            <tr>
+                                              <td><strong>Headers:</strong></td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center">[put parameters here]</td>
+                                            </tr>
+                                            <tr>
+                                              <td><strong>Parameters:</strong></td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center">[put parameters here]</td>
+                                            </tr>
+                                            <tr>
+                                              <td><strong>Response:</strong></td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center">[put parameters here]</td>
+                                            </tr>
+                                          </table>
+                                        </td>
                                       </tr>
                                     {% endif %}
 
@@ -331,12 +358,12 @@ layout: page
                               <td style="padding-left: 10px; padding-top: 10px;">
                                 <strong>{{ definition_name }}</strong>
                                 <ul style='padding-left: 25px; margin-top:5px;'>
-                                {% for property in fields.properties %}
-                                  {% assign property_name = property[0] %}
-                                  {% assign property = property[1] %}
-                                  <li>{{ property_name }}</li>
-                                {% endfor %}
-                              </ul>
+                                  {% for property in fields.properties %}
+                                    {% assign property_name = property[0] %}
+                                    {% assign property = property[1] %}
+                                    <li>{{ property_name }}</li>
+                                  {% endfor %}
+                                </ul>
                               </td>
                               <td align="right" style="padding: 10px;"></td>
                               <td align="right" style="padding: 10px;"></td>
