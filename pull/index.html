@@ -106,6 +106,7 @@ title: Pull
               if($issue_count==$total_issues)
                 {
                 //console.log($current);
+                $yaml_store['plans'] = {};
                 $yaml_store['plans'] = $current;
                 $yaml_store_string = JSON.stringify($current, null, 4);
 
