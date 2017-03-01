@@ -29,7 +29,11 @@ layout: page
         'Accept': 'application/vnd.ohanapi+json; version=1'
        },
        success:function(response){
-            console.log(response);
+
+            $viewer = JSON.stringify(response, null, 4);
+            console.log($viewer);
+            document.getElementById($path+"-response").value = $viewer;
+
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert("Status: " + textStatus); alert("Error: " + errorThrown);
