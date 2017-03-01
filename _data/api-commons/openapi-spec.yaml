@@ -22,7 +22,7 @@
             in: header
             type: string
             required: true
-            default: 'application/vnd.ohanapi+json; version=1'          
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: page
             in: query
             type: string
@@ -45,7 +45,12 @@
         summary: Categories
         description: This endpoint retrieves all categories.
         operationId: getCategories
-        parameters: []
+        parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
         responses:
           '200':
             description: Successful response
@@ -61,6 +66,11 @@
         description: Retrieve all of the locations available in this database.
         operationId: retrieveLocation
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: location_id
             in: path
             type: string
@@ -80,6 +90,11 @@
         description: This endpoint retrieves all locations that are near the specified location.
         operationId: findNearbyLocations
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: location_id
             in: path
             type: string
@@ -111,6 +126,11 @@
         description: Retrieve all services for this location
         operationId: retrieveLocationServices
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: location_id
             in: path
             type: string
@@ -130,6 +150,11 @@
         description: Retrieve all of the organizations available in this database.
         operationId: retrieveLOrganizations
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: page
             in: query
             type: string
@@ -153,6 +178,11 @@
         description: Retrieve all of the organizations available in this database.
         operationId: retrieveLOrganization
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: organization_id
             in: path
             type: string
@@ -173,6 +203,11 @@
           organization.
         operationId: retrieveLOrganizationLocations
         parameters:
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
           - name: organization_id
             in: path
             type: string
@@ -192,42 +227,47 @@
         description: This endpoint retrieves all locations that match the criteria based on the parameters below. Multiple parameters can be used at the same time, separated by an ampersand (&).
         operationId: searchLocations
         parameters:
-        - in: query
-          name: category
-          type: string
-        - in: query
-          name: email
-          type: string
-        - in: query
-          name: keyword
-          type: string
-        - in: query
-          name: language
-          type: string
-        - in: query
-          name: lat_lng
-          type: string
-        - in: query
-          name: location
-          type: string
-        - in: query
-          name: org_name
-          type: string
-        - in: query
-          name: radius
-          type: string
-        - in: query
-          name: service_area
-          type: string
-        - in: query
-          name: status
-          type: string
-        - in: query
-          name: page
-          type: string
-        - in: query
-          name: per_page
-          type: string
+          - name: Accept
+            in: header
+            type: string
+            required: true
+            default: 'application/vnd.ohanapi+json; version=1'
+          - in: query
+            name: category
+            type: string
+          - in: query
+            name: email
+            type: string
+          - in: query
+            name: keyword
+            type: string
+          - in: query
+            name: language
+            type: string
+          - in: query
+            name: lat_lng
+            type: string
+          - in: query
+            name: location
+            type: string
+          - in: query
+            name: org_name
+            type: string
+          - in: query
+            name: radius
+            type: string
+          - in: query
+            name: service_area
+            type: string
+          - in: query
+            name: status
+            type: string
+          - in: query
+            name: page
+            type: string
+          - in: query
+            name: per_page
+            type: string
         responses:
           '200':
             description: Successful response
