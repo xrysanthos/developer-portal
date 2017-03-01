@@ -40,7 +40,10 @@ layout: page
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            $message = "Status: " + textStatus + "\nError: " + errorThrown;
+            document.getElementById($path+"-response").value = $$message;
+            document.getElementById($path+"-response").style.width = "100%";
+            document.getElementById($path+"-response").style.height = "50px";
         }
       });
 
