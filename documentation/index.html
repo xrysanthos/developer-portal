@@ -20,7 +20,7 @@ layout: page
 
     $api_url = $url + $path;
 
-    alert('running - ' + $api_url);
+    document.getElementById($path+'-loading').style.display = '';
 
     var response = $.ajax({
        url: $api_url,
@@ -30,11 +30,13 @@ layout: page
        },
        success:function(response){
 
-            $viewer = JSON.stringify(response, null, 2);
-            console.log($viewer);
-            document.getElementById($path+"-response").value = $viewer;
-            document.getElementById($path+"-response").style.width = "100%";
-            document.getElementById($path+"-response").style.height = "450px";
+          document.getElementById($path+'-loading').style.display = 'none';
+
+          $viewer = JSON.stringify(response, null, 2);
+          console.log($viewer);
+          document.getElementById($path+"-response").value = $viewer;
+          document.getElementById($path+"-response").style.width = "100%";
+          document.getElementById($path+"-response").style.height = "450px";
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -430,14 +432,9 @@ layout: page
                                                 <textarea id="{{ slug }}-response" style="overflow: auto;"></textarea>
                                               </td>
                                             </tr>
-
-                                            <tr>
-                                              <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <div class="progress">
-                                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                    <span class="sr-only">60% Complete</span>
-                                                  </div>
-                                                </div>
+                                            <tr id="{{ slug }}-response" style="display: none;">
+                                              <td align="center" style="font-size: 12px; padding: 25px;">
+                                                <img src="http://developer.switchboard.miami.adopta.agency/images/loading.gif" />
                                               </td>
                                             </tr>
                                             <tr>
