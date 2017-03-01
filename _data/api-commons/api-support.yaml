@@ -1,7 +1,7 @@
 - title: Support
   image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
-  header: There are three ways that you can get support when using the Miami Open211 API--consider one of the following channels when you have a question or comment.
-  footer: It is recommended that you start with submitting a Github issue, then maybe tweet at us. If your questions or comments require some privacy you should use email.
+  header: There are three ways that you can get support when using the Miami Open211 API--consider one of the following channels when you have a question, comment, or some feedback regarding the API and integration.
+  footer: It is recommended that you start with submitting a Github issue, then maybe tweet at us. If your questions or comments require some privacy you should use email. Make sure you look through the existing issues before submitting a new one.
   resources:
     - title: via Github
       description:
