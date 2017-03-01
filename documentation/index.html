@@ -19,7 +19,7 @@ layout: page
     {
 
     $api_url = $url + $path;
-
+    console.log("loading: " + $api_url);
     document.getElementById($path+'-loading').style.display = '';
 
     var response = $.ajax({
@@ -33,7 +33,7 @@ layout: page
           document.getElementById($path+'-loading').style.display = 'none';
 
           $viewer = JSON.stringify(response, null, 2);
-          console.log($viewer);
+          //console.log($viewer);
           document.getElementById($path+"-response").value = $viewer;
           document.getElementById($path+"-response").style.width = "100%";
           document.getElementById($path+"-response").style.height = "450px";
