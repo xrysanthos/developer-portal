@@ -1,5 +1,4 @@
 ---
 layout: none
 ---
-
-{{ site.data.api-commons.api-support | json }}
+{% assign show_json = site.data.api-commons.api-support | json | replace: '=>', ':' %}{{ show_json }}
