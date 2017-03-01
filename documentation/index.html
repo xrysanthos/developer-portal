@@ -233,7 +233,7 @@ layout: page
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
 
-                        <table width="100%" border="1" style="margin-left: 15px;">
+                        <table width="95%" border="1" style="margin-left: 15px;">
                           {% assign taglist = '' %}
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
@@ -276,7 +276,7 @@ layout: page
                           {% for grouptag in tagArray %}
 
                             <tr>
-                              <td colspan="4" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
+                              <td colspan="5" style="padding-top: 10px;"><strong>{{ grouptag }}</strong></td>
                             </tr>
 
                             {% for spec in openapi_spec_json %}
