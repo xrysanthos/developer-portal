@@ -69,6 +69,9 @@ layout: page
   {% if common.type == 'x-code-page' %}
     {% assign code_page_url = common.url %}
   {% endif %}
+  {% if common.type == 'x-postman' %}
+    {% assign postman_url = common.url %}
+  {% endif %}
 
   {% if common.type == 'x-road-map' %}
     {% assign road_map_url = common.url %}
