@@ -10,8 +10,14 @@ title: Code
 <p><img src="{{ apicode.image }}" align="right" width="75" style="padding: 5px;" /></p>
 <p>{{ apicode.header }}</p>
 <center>
+<table cellpadding="10" cellspacing="10" width="90%" style="margin-bottom: 10px;">
+  <tr>
 	{% for entry in apicode.entries %}
-    {{ entry.icon }}
+  		<td align="center" valign="top" width="100">
+  			{{ entry.icon }}
+  		</td>
 	{% endfor %}
+  </tr>
+</table>
 </center>
 <p>{{ apicode.footer }}</p>
