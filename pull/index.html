@@ -36,9 +36,7 @@ title: Pull
     var github = new Github({token: $oAuthToken,auth: "oauth"});
     var issues = github.getIssues($org,$repo);
 
-    var issue = issues.list(function(err,issues) {
-      console.log(issues);
-    });
-
+    var issue = issues.list({});
+    console.log(issue);
 
 </script>
