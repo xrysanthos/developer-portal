@@ -17,7 +17,7 @@ layout: page
    function getRequest($path,$url)
     {
 
-    $api_url = $url + $url;
+    $api_url = $url + $path;
     alert('running - ' + $api_url);
 
     var response = $.ajax({
@@ -425,7 +425,7 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}');">Make API Request</button>
+                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ api_url }}');">Make API Request</button>
                                               </td>
                                             </tr>
                                           </table>
