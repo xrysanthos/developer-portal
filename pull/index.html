@@ -36,13 +36,7 @@ title: Pull
     var github = new Github({token: $oAuthToken,auth: "oauth"});
     var issues = github.getIssues($org,$repo);
 
-    console.log(issues.list);
+    console.log("HERE:" + issues.list);
 
-    $.each(issues.list, function(issueKey, issueValue) {
-
-      console.log(issueKey);
-      console.log(issueValue);
-
-      });
 
 </script>
