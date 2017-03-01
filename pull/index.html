@@ -40,7 +40,10 @@ title: Pull
     $options = {};
     $options['labels'] = 'Road Map';
 
-    var issue = issues.list($options,function(err) { });
-    console.log("issue: " + issue);
+    var issue = issues.list($options,function(err,issues) {
+
+      console.log("issues: " + issues);
+
+    });
 
 </script>
