@@ -333,10 +333,12 @@ layout: page
                                                   <td align="left" style="font-size: 12px; padding: 10px;">
                                                       <table style="width: 50%;">
                                                         {% for parameter in parameters %}
-                                                          <tr>
-                                                            <td><strong>{{ parameter.name }}:</strong></td>
-                                                            <td><input type="text" name="" value="" style="width: 100%;" /></td>
-                                                          </tr>
+                                                          {% if parameter.in == 'header' %}
+                                                            <tr>
+                                                              <td><strong>{{ parameter.name }}:</strong></td>
+                                                              <td><input type="text" name="" value="" style="width: 100%;" /></td>
+                                                            </tr>
+                                                          {% endif %}
                                                         {% endfor %}
                                                       </table>
                                                   </td>
@@ -365,10 +367,12 @@ layout: page
                                                   <td align="left" style="font-size: 12px; padding: 10px;">
                                                       <table style="width: 50%;">
                                                         {% for parameter in parameters %}
-                                                          <tr>
-                                                            <td><strong>{{ parameter.name }}:</strong></td>
-                                                            <td><input type="text" name="" value="" style="width: 100%;" /></td>
-                                                          </tr>
+                                                          {% if parameter.in == 'query' || parameter.in == 'path' %}
+                                                            <tr>
+                                                              <td><strong>{{ parameter.name }}:</strong></td>
+                                                              <td><input type="text" name="" value="" style="width: 100%;" /></td>
+                                                            </tr>
+                                                          {% endif %}
                                                         {% endfor %}
                                                       </table>
                                                   </td>
