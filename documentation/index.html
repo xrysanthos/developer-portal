@@ -22,6 +22,16 @@ layout: page
     console.log("loading: " + $api_url);
     document.getElementById($path+'-loading').style.display = '';
 
+    var elements = document.getElementById($path+'-form').elements;
+
+    for (var i = 0, element; element = elements[i++];) {
+        if (element.type === "text" && element.value === "")
+          {
+          console.log(element.type + ' - ' + element.id + ' - ' + element.name + ' - ' + element.value);
+        }
+      }
+
+
     var response = $.ajax({
        url: $api_url,
        method: "get",
@@ -356,6 +366,7 @@ layout: page
                                       </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
                                         <td colspan="4" style="padding: 15px;">
+                                          <form id="{{ slug }}-form">
                                           <table width="90%" border="0" align="center">
 
                                             <!-- Begin Headers -->
@@ -446,6 +457,7 @@ layout: page
                                               </td>
                                             </tr>
                                           </table>
+                                          </form>
                                         </td>
                                       </tr>
                                     {% endif %}
