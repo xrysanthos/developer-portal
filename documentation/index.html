@@ -51,9 +51,7 @@ layout: page
     var response = $.ajax({
        url: $api_url,
        method: "get",
-       headers: {
-        'Accept': 'application/vnd.ohanapi+json; version=1'
-       },
+       headers: {$headers},
        success:function(response){
 
           document.getElementById($path+'-loading').style.display = 'none';
