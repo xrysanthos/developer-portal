@@ -105,12 +105,12 @@ title: Pull
                 {
                 console.log("title: " + $yaml_store['title']);
                 $y = {};
-                $y['title'] = $yaml_store.title;
-                $y['image'] = $yaml_store.image;
-                $y['header'] = $yaml_store.header;
-                $y['footer'] = $yaml_store.footer;
-                //$y['plans'] = $current;
-                $store_string = JSON.stringify($yaml_store, null, 4);
+                $y['title'] = $yaml_store['title'];
+                $y['image'] = $yaml_store['image'];
+                $y['header'] = $yaml_store['header'];
+                $y['footer'] = $yaml_store['footer'];
+                $y['plans'] = $current;
+                $store_string = JSON.stringify($y, null, 4);
 
                 console.log("YAML6: " + $store_string);
 
