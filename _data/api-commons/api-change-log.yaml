@@ -1,21 +1,9 @@
-- title: Change Log
-  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-change.png
-  header: This is a detailed log of the changes that have been made to the Switchboard of Miami API.
-  footer: This change log is just pulling from the Github issues that are tagged change log.
-  history:
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
+title: Change Log
+image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-change.png'
+header: >-
+  This is a detailed log of the changes that have been made to the Switchboard
+  of Miami API.
+footer: >-
+  This change log is just pulling from the Github issues that are tagged change
+  log.
+plans: []
