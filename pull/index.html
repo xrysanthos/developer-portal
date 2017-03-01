@@ -42,7 +42,10 @@ title: Pull
 
     var issue = issues.list($options,function(err,issues) {
 
-      console.log("issues: " + issues);
+      //console.log("issues: " + issues);
+      $.each(issues, function(issueKey, issueValue) {
+        console.log(issueKey + " = " + issueValue);
+        });
 
     });
 
