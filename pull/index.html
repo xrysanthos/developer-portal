@@ -54,71 +54,71 @@ title: Pull
 
             $yaml_store = jsyaml.load(data);
 
-          });
-        }
-      else
-        {
-        // If error we DO NOT have access
-        alert('We have NO access to API & repo!');
-        }
+            console.log("Yaml" + $yaml_store );
 
+            var issues = github.getIssues($org,$repo);
+
+            $options = {};
+            $options['labels'] = $filter_tag;
+
+            $current = [];
+
+            var issue = issues.list($options,function(err,issues) {
+
+              $total_issues = issues.length;
+              $issue_count = 0;
+
+              $.each(issues, function(issueKey, issueValue) {
+
+                $html_url = issueValue.html_url;
+                $number = issueValue.number;
+                $state = issueValue.state;
+                $title = issueValue.title;
+                $body = issueValue.body;
+                $labels = issueValue.labels;
+                $updated_at = issueValue.updated_at;
+
+                $.each($labels, function(labelKey, labelValue) {
+
+                  $label_name = labelValue.name;
+                  if($label_name == $filter_tag)
+                    {
+                    console.log($label_name);
+                    console.log($title);
+
+                    $c = {};
+                    $c['title'] = $title
+                    $c['description'] = $body;
+                    $c['url'] = $html_url;
+                    $c['date'] = $updated_at;
+
+                    $current.push($c);
+
+                    }
+
+                  });
+
+                  $issue_count++;
+
+                });
+
+              console.log($issue_count + ' == ' + $total_issues);
+              if($issue_count==$total_issues)
+                {
+                console.log($current);
+
+
+                }
+
+            });
       });
-    console.log("Yaml" + $yaml_store );
+    }
+  else
+    {
+    // If error we DO NOT have access
+    alert('We have NO access to API & repo!');
+    }
 
-    var issues = github.getIssues($org,$repo);
-
-    $options = {};
-    $options['labels'] = $filter_tag;
-
-    $current = [];
-
-    var issue = issues.list($options,function(err,issues) {
-
-      $total_issues = issues.length;
-      $issue_count = 0;
-
-      $.each(issues, function(issueKey, issueValue) {
-
-        $html_url = issueValue.html_url;
-        $number = issueValue.number;
-        $state = issueValue.state;
-        $title = issueValue.title;
-        $body = issueValue.body;
-        $labels = issueValue.labels;
-        $updated_at = issueValue.updated_at;
-
-        $.each($labels, function(labelKey, labelValue) {
-
-          $label_name = labelValue.name;
-          if($label_name == $filter_tag)
-            {
-            console.log($label_name);
-            console.log($title);
-
-            $c = {};
-            $c['title'] = $title
-            $c['description'] = $body;
-            $c['url'] = $html_url;
-            $c['date'] = $updated_at;
-
-            $current.push($c);
-
-            }
-
-          });
-
-          $issue_count++;
-
-        });
-
-      console.log($issue_count + ' == ' + $total_issues);
-      if($issue_count==$total_issues)
-        {
-        console.log($current);
-
-
-        }
-
-    });
+  });
 
 </script>
