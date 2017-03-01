@@ -30,7 +30,7 @@ layout: page
        },
        success:function(response){
 
-            $viewer = JSON.stringify(response, null, 4);
+            $viewer = JSON.stringify(response, null, 2);
             console.log($viewer);
             document.getElementById($path+"-response").innerHTML = $viewer;
             document.getElementById($path+"-response").style.height = "450px";
