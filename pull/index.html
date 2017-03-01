@@ -111,8 +111,6 @@ title: Pull
                 $y['plans'] = $current;
                 $yaml_dump = JSON.stringify($y, null, 4);
 
-                console.log("YAML6: " + $store_string);
-
                 var writerepo = github.getRepo($org,$repo);
                 writerepo.getTree('master?recursive=true', function(err, writetree) {
 
