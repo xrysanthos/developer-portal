@@ -34,12 +34,12 @@ layout: page
       }
     $headers = $headers.substring(1, $headers.length-1);
 
-    console.log('parameters:');
+    console.log('parameters:'+ elements.length);
     var elements = document.getElementById($path+'-parameters').elements;
     if(elements.length > 0){ $api_url = $api_url + '?'; }
-    for (var i = 0, element; element = elements[i++];)
+    for(var i = 0, element; element = elements[i++];)
       {
-        if (element.type === "text")
+        if(element.type === "text")
           {
           if(element.value!='')
             {
