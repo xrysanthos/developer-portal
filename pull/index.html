@@ -37,7 +37,7 @@ title: Pull
     var issues = github.getIssues($org,$repo);
 
     $options = {};
-    $options['labels'] = 'issues,bug';
+    $options['labels'] = 'issues';
 
     var issue = issues.list($options,function(err,issues) {
 
@@ -48,9 +48,17 @@ title: Pull
         $number = issueValue.number;
         $state = issueValue.state;
         $title = issueValue.title;
+        $labels = issueValue.labels;
         $updated_at = issueValue.updated_at;
 
-        console.log($title);
+        $.each($labels, function(labelKey, labelValue) {
+          $label_name = labelValue.name;
+          if($label_name == 'issues')
+            {
+            console.log($label_name);
+            console.log($title);
+            }
+        });
 
         });
 
