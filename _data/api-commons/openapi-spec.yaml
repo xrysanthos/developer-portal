@@ -124,6 +124,7 @@
         summary: Organizations
         description: Retrieve all of the organizations available in this database.
         operationId: retrieveLOrganizations
+        parameters:
           - name: page
             in: query
             type: string
