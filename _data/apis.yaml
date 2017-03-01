@@ -79,6 +79,6 @@
     url: https://twitter.com/apievangelist
   include: []
   maintainers:
-  - FN: Kin Lane
-    x-twitter: apievangelist
-    email: info@apievangelist.com
+  - FN: Greg Bloom
+    x-twitter: open_referral
+    email: bloom@openreferral.org,

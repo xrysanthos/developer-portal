@@ -1,17 +1,17 @@
 - title: Support
   image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
-  header: Here are the available support channels used to help meet the needs of developers.
-  footer: Thanks for looking at the getting started, FAQ, and documentation before contacting.
+  header: There are three ways that you can get support when using the Miami Open211 API--consider one of the following channels when you have a question or comment.
+  footer: It is recommended that you start with submitting a Github issue, then maybe tweet at us. If your questions or comments require some privacy you should use email.
   resources:
     - title: via Github
       description:
       image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
-      url: https://github.com/Kin-Lane/api/issues
+      url: https://github.com/adopta-agency/open-referral-miami/issues
     - title: via Twitter
       description:
       image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
-      url: https://twitter.com/kinlane/
+      url: https://twitter.com/open_referral/
     - title: via Email
       description:
       image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email-at.png
-      url: mailto:info@kinlane.com
+      url: mailto:bloom@openreferral.org
