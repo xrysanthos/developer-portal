@@ -1,4 +1,4 @@
-- title: Authentication for
+- title: Authentication For The Miami Open211 API
   image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-key-circle.png
   header: The Miami Open211 API is a publicly available API. There is no authentication required to just GET, or read information. You only need to obtain an API key if you are a partner, and will be writing, or conducting a POST, PUT, and DELETE. If you will be authenticating with the API, you will need to be including the following HEADER with each API call.
   footer: Authentication is required for the Miami Open211 API to help maintain the integrity of the data in the system, balancing public access to the data, while remaining a high level of quality regarding who can update and delete information.
