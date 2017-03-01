@@ -15,15 +15,15 @@ layout: page
       }
     }
 
-   function getRequest($path,$url)
+   function getRequest($slug,$path,$url)
     {
 
     $api_url = $url + $path;
 
-    document.getElementById($path+'-loading').style.display = '';
+    document.getElementById($slug+'-loading').style.display = '';
 
     console.log('headers:');
-    var elements = document.getElementById($path+'-headers').elements;
+    var elements = document.getElementById($slug+'-headers').elements;
     $headers = '';
     for (var i = 0, element; element = elements[i++];) {
         if (element.type === "text")
@@ -34,7 +34,7 @@ layout: page
       }
     $headers = $headers.substring(1, $headers.length-1);
 
-    var path_elements = document.getElementById($path+'-path').elements;
+    var path_elements = document.getElementById($slug+'-path').elements;
     for(var i = 0, element; element = path_elements[i++];)
       {
         if(element.type === "text")
@@ -48,7 +48,7 @@ layout: page
         }
 
 
-    var param_elements = document.getElementById($path+'-parameters').elements;
+    var param_elements = document.getElementById($slug+'-parameters').elements;
     $anyparams = 0;
     $query_string = '';
     for(var i = 0, element; element = param_elements[i++];)
@@ -73,21 +73,21 @@ layout: page
        headers: {$headers},
        success:function(response){
 
-          document.getElementById($path+'-loading').style.display = 'none';
+          document.getElementById($slug+'-loading').style.display = 'none';
 
           $viewer = JSON.stringify(response, null, 2);
           //console.log($viewer);
-          document.getElementById($path+"-response").value = $viewer;
-          document.getElementById($path+"-response").style.width = "100%";
-          document.getElementById($path+"-response").style.height = "450px";
+          document.getElementById($slug+'-response').value = $viewer;
+          document.getElementById($slug+'-response').style.width = "100%";
+          document.getElementById($slug+'-response').style.height = "450px";
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            document.getElementById($path+'-loading').style.display = 'none';
+            document.getElementById($slug+'-loading').style.display = 'none';
             $message = "Status: " + textStatus + "\nError: " + errorThrown;
-            document.getElementById($path+"-response").value = $$message;
-            document.getElementById($path+"-response").style.width = "100%";
-            document.getElementById($path+"-response").style.height = "50px";
+            document.getElementById($slug+'-response').value = $$message;
+            document.getElementById($slug+'-response').style.width = "100%";
+            document.getElementById($slug+'-response').style.height = "50px";
         }
       });
 
@@ -526,7 +526,7 @@ layout: page
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
-                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ api_url }}');">Make API Request</button>
+                                                <button type="button" class="btn btn-success" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make API Request</button>
                                               </td>
                                             </tr>
                                           </table>
