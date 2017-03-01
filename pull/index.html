@@ -36,7 +36,10 @@ title: Pull
     var github = new Github({token: $oAuthToken,auth: "oauth"});
     var issues = github.getIssues($org,$repo);
 
-    var issue = issues.list();
-    console.log("HERE:" + issues);
+    $options = {};
+    $options['labels'] = 'Road Map';
+
+    var issue = issues.list($options,function(err) { });
+    console.log(issue);
 
 </script>
