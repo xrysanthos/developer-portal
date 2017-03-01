@@ -31,7 +31,7 @@
     - type: x-openapi-spec
       url: api-commons/openapi-spec.yaml
     - type: x-json-schema
-      url: api-commons/schema.yaml
+      url: /data/json/schema.json
     - type: x-api-filters
       url: api-commons/api-filter.yaml
   x-common:
