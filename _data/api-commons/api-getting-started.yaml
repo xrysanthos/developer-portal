@@ -1,15 +1,13 @@
 - title: Getting Started
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png
-  header: We try to make it easy as possible to get started by providing you with a simple form to signup, and requiring keys to make each API call.
-  footer: If you encountered any problems signing up, please let us know so we can mke it smoother for other users when getting started.
+  header: All you need to get started with the Miami Open211 API is to learn about the paths, parameters, and data model for the API, and begin making calls. Started with the documentation, visit the code section, and let us know if you need any hellp.
+  footer: We encourage you to get involved with the project beyond just consuming data. You can connect with the API platform team, as well as the rest of the community using the support page--thank you for you help!
   steps:
-    - title: Signup for an API account
-      url: http://developer.switchboard.miami.adopta.agency/
-    - title: Add a new app to get API keys
-      url: http://developer.switchboard.miami.adopta.agency/
-    - title: Learn about how to authenticate with APIs
-      url: authentication/
-    - title: Visit the API documentation page for details
+    - title: Visit the API documentation
       url: documentation/
-    - title: Submit an issue you have using Github issues
-      url: https://github.com/Kin-Lane/api/issues
+    - title: Download the Postman collection
+      url: postman/
+    - title: Visit the code section
+      url: code/
+    - title: Submit any issues you have
+      url: https://github.com/adopta-agency/open-referral-miami/issues

@@ -1,7 +1,5 @@
 - title: Authentication For The Miami Open211 API
   image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-key-circle.png
-  header: The Miami Open211 API is a publicly available API. There is no authentication required to just GET, or read information. You only need to obtain an API key if you are a partner, and will be writing, or conducting a POST, PUT, and DELETE. If you will be authenticating with the API, you will need to be including the following HEADER with each API call.
-  footer: Authentication is required for the Miami Open211 API to help maintain the integrity of the data in the system, balancing public access to the data, while remaining a high level of quality regarding who can update and delete information.
+  header: The Miami Open211 API is a publicly available API. There is no authentication required to just GET, or read information. All you need to do is make lAPI calls to the paths available in the documentation.
+  footer: During the next phase of the project we will introduce paths for adding, updating, and deleting data for partners. Authentication will be required for the Miami Open211 API to help maintain the integrity of the data in the system, balancing public access to the data, while remaining a high level of quality regarding who can update and delete information.
   keys:
-    - name: X-Api-Token
-      description: The API token you receive after setting up an Open211 API account, and have added an application.
