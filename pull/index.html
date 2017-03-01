@@ -103,7 +103,7 @@ title: Pull
                 });
 
               //console.log($issue_count + ' == ' + $total_issues);
-              
+
               if($issue_count==$total_issues)
                 {
                 //console.log($current);
@@ -112,11 +112,11 @@ title: Pull
                 $yaml_store_2['image'] = $yaml_store['image'];
                 $yaml_store_2['header'] = $yaml_store['header'];
                 $yaml_store_2['footer'] = $yaml_store['footer'];
-                $yaml_store_2['plans'] =  $current;
+                $yaml_store_2['plans'] = $current;
 
                 $yaml_store_string = JSON.stringify($yaml_store_2, null, 4);
 
-                console.log("YAML: " + $yaml_store_string);
+                console.log("YAML2: " + $yaml_store_string);
                 }
 
             });
