@@ -33,6 +33,7 @@ layout: page
             $viewer = JSON.stringify(response, null, 4);
             console.log($viewer);
             document.getElementById($path+"-response").innerHTML = $viewer;
+            document.getElementById($path+"-response").style.height = "450px";
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -424,7 +425,7 @@ layout: page
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td style="font-size: 12px; padding: 10px;" id="{{ slug }}-response"></td>
+                                              <td style="font-size: 12px; padding: 10px; height: 25px; overflow: auto;" id="{{ slug }}-response"></td>
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
