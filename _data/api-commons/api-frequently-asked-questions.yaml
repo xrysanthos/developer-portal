@@ -22,4 +22,4 @@
     - category: Management
       questions:
         - question: How do I edit the home page of the Miami Open211 API portal?
-          answer: The home page of the developer portal is entirely dynamic and generated using the <a href="https://github.com/adopta-agency/open-referral-miami/blob/master/_data/apis.yaml">APIs.json (yaml) for this project</a>.         
+          answer: The home page of the developer portal is entirely dynamic and generated using the <a href="https://github.com/adopta-agency/open-referral-miami/blob/master/_data/apis.yaml">APIs.json (yaml) for this project</a>.
