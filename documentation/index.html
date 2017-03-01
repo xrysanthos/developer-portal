@@ -286,7 +286,7 @@ layout: page
                               {% assign api_url = api_host | prepend:'https://' %}
                               {% assign api_url = api_url | append:api_base %}
                               {% assign api_url = api_url | append:'/' %}
-            
+
                               {% for path in spec.paths %}
 
                                 {% assign this_path = path[0] %}
@@ -424,7 +424,7 @@ layout: page
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td align="center" style="font-size: 12px; padding: 10px;" id="{{ slug }}-response"></td>
+                                              <td style="font-size: 12px; padding: 10px;" id="{{ slug }}-response"></td>
                                             </tr>
                                             <tr>
                                               <td align="center"s tyle="font-size: 12px; padding: 25px;">
