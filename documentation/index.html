@@ -272,6 +272,9 @@ layout: page
                                 {% if filter_path == 0 %}
                                   {% for method in method_json %}
 
+                                    {% assign parametersarray = method[1].parameters %}
+                                    {% assign parameters = parametersarray[0] %}
+
                                     {% assign tagarray = method[1].tags %}
                                     {% assign tag = tagarray[0] %}
 
@@ -310,22 +313,22 @@ layout: page
                                         <td colspan="4">
                                           <table width="90%" border="0" align="center">
                                             <tr style="background-color: #CCC;">
-                                              <td style="font-size: 12px;"><strong>Headers:</strong></td>
+                                              <td style="font-size: 12px; padding: 5px;"><strong>Headers:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td align="center">[put parameters here]</td>
+                                              <td align="center"style="font-size: 12px; padding: 10px;">{{ parameters }}</td>
                                             </tr>
                                             <tr style="background-color: #CCC;">
-                                              <td style="font-size: 12px;"><strong>Parameters:</strong></td>
+                                              <td style="font-size: 12px; padding: 5px;"><strong>Parameters:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td align="center">[put parameters here]</td>
+                                              <td align="center"style="font-size: 12px; padding: 10px;">[put parameters here]</td>
                                             </tr>
                                             <tr style="background-color: #CCC;">
-                                              <td style="font-size: 12px;"><strong>Response:</strong></td>
+                                              <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td align="center">[put parameters here]</td>
+                                              <td align="center"style="font-size: 12px; padding: 10px;">[put response here]</td>
                                             </tr>
                                           </table>
                                         </td>
