@@ -17,6 +17,15 @@
         summary: Locations
         description: Retrieve all of the locations available.
         operationId: retrieveLocations
+        parameters:
+          - name: page
+            in: query
+            type: string
+            required: false
+          - name: per_page
+            in: query
+            type: string
+            required: false
         responses:
           '200':
             description: Successful response
@@ -115,6 +124,14 @@
         summary: Organizations
         description: Retrieve all of the organizations available in this database.
         operationId: retrieveLOrganizations
+          - name: page
+            in: query
+            type: string
+            required: false
+          - name: per_page
+            in: query
+            type: string
+            required: false
         responses:
           '200':
             description: Successful response
