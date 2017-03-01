@@ -53,8 +53,8 @@ title: Pull
           repo.read('gh-pages', '_data/api-commons/api-road-map.yaml', function(err, data) {
 
             $yaml_store = jsyaml.load(data);
-
-            console.log("Yaml" + $yaml_store );
+            $yaml_store_string = JSON.stringify($yaml_store, null, 4);
+            console.log("Yaml" + $yaml_store_string);
 
             var issues = github.getIssues($org,$repo);
 
