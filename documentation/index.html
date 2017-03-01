@@ -2,6 +2,7 @@
 layout: page
 ---
 <script type="text/javascript">
+
   function showme($id)
     {
     if(document.getElementById($id).style.display=='none')
@@ -18,11 +19,11 @@ layout: page
     {
 
     $api_url = $url + $path;
+
     alert('running - ' + $api_url);
 
     var response = $.ajax({
-
-       url: $api_url;
+       url: $api_url,
        method: "get",
        headers: {
         'Accept': 'application/vnd.ohanapi+json; version=1'
@@ -279,8 +280,8 @@ layout: page
                               {% assign api_base = spec.basePath %}
 
                               {% assign api_url = api_host | prepend:'https://' %}
-                              {% assign api_url = api_url | append:'/' %}
                               {% assign api_url = api_url | append:api_base %}
+                              {% assign api_url = api_url | append:'/' %}
 
                               api_url: {{ api_url }}<br />
 
