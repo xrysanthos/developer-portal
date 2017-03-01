@@ -36,10 +36,13 @@ title: Pull
     var github = new Github({token: $oAuthToken,auth: "oauth"});
     var issues = github.getIssues($org,$repo);
 
-    console.log("HERE:" + issues);
-    $.each(issues, function(issueKey, issueValue) {
-      console.log(issueKey + ' = ' + issueValue);
-      });
+    issues.getTree('master?recursive=true', function(err, tree) {
 
+      $.each(tree, function(treeKey, treeValue) {
+
+        console.log(treeKey + ' = ' + treeValue);
+
+        });
+      });
 
 </script>
