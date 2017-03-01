@@ -57,6 +57,8 @@
     url: https://github.com/adopta-agency/open-referral-miami/
   - type: x-issues
     url: issues/
+  - type: x-status
+    url: status/
   - type: x-login
     url: https://miamiopen211-api.herokuapp.com/users/sign_in
   - type: x-privacy-policy-page
