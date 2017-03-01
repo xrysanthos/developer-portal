@@ -50,7 +50,7 @@ title: Pull
       if(err == null && $oAuthToken != null)
         {
           // If no error we have access, read YAML store
-          repo.read('gh-pages', '_data/api-commons/api-road-map.yaml', function(err, data) {
+          repo.read('master', '_data/api-commons/api-road-map.yaml', function(err, data) {
 
             $yaml_store_array = jsyaml.load(data);
             $yaml_store = $yaml_store_array[0];
@@ -103,16 +103,33 @@ title: Pull
 
               if($issue_count==$total_issues)
                 {
-                console.log("title: " + $yaml_store['title']);
                 $y = {};
                 $y['title'] = $yaml_store['title'];
                 $y['image'] = $yaml_store['image'];
                 $y['header'] = $yaml_store['header'];
                 $y['footer'] = $yaml_store['footer'];
                 $y['plans'] = $current;
-                $store_string = JSON.stringify($y, null, 4);
+                $yaml_dump = JSON.stringify($y, null, 4);
 
                 console.log("YAML6: " + $store_string);
+
+                var writerepo = github.getRepo($org,$repo);
+                writerepo.getTree('master?recursive=true', function(err, writetree) {
+
+                  $.each(writetree, function(treeKey, treeValue) {
+
+                    $writepath = '_data/api-commons/api-road-map.yaml';
+                    $path = treeValue['path'];
+                    $sha = treeValue['sha'];
+                    //console.log($path + ' == ' + $writepath);
+                    if($path==$writepath)
+                      {
+                      repo.writemanual('gh-pages',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
+                      //console.log("writing " + $writepath);
+                      alert("saved " + $writepath);
+                      }
+                    });
+                  });
 
                 }
 
