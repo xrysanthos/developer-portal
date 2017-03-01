@@ -41,15 +41,18 @@ title: Pull
     $options = {};
     $options['labels'] = $filter_tag;
 
+    $current = [];
+
     var issue = issues.list($options,function(err,issues) {
 
-      //console.log("issues: " + issues);
+      console.log("num of issues: " + issues.length);
       $.each(issues, function(issueKey, issueValue) {
 
         $html_url = issueValue.html_url;
         $number = issueValue.number;
         $state = issueValue.state;
         $title = issueValue.title;
+        $body = issueValue.body;
         $labels = issueValue.labels;
         $updated_at = issueValue.updated_at;
 
@@ -59,9 +62,17 @@ title: Pull
             {
             console.log($label_name);
             console.log($title);
-            }
-        });
 
+            $c = {};
+            $c['title'] = $title
+            $c['description'] = $body;
+            $c['url'] = $html_url;
+            $c['date'] = $updated_at;
+
+            $current.push($$);
+
+            }
+          });
         });
 
     });
