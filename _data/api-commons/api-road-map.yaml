@@ -1,21 +1,14 @@
-- title: Road Map
-  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-roadmap.png
-  header: This is where we share items that are included in the road map for the API.
-  footer: This road map list is driven from Github issues that are tagged road map.
-  plans:
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
-    - title: Just a Test Entry For Now
-      description: This is just a test entry to show what is possible, until I automate it from the Github repo.
-      url: https://github.com/Kin-Lane/api/issues
-      date: 01/03/2016
+{
+    "title": "Road Map",
+    "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-roadmap.png",
+    "header": "This is where we share items that are included in the road map for the API.",
+    "footer": "This road map list is driven from Github issues that are tagged road map.",
+    "plans": [
+        {
+            "title": "Write Functionality",
+            "description": "It would be nice to be able to add, update, and delete data.\r\n\r\nAdding POST, PUT, PATCH, and DELETE paths for all endpoints.",
+            "url": "https://github.com/adopta-agency/open-referral-miami/issues/1",
+            "date": "2017-03-01T01:30:33Z"
+        }
+    ]
+}
