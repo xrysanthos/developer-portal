@@ -1,11 +1,11 @@
-title: Issues
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-issue.png'
-header: All current known issues around the operations of the API are listed here.
-footer: This issues list is driven from Github issues that are taged as issue.
-entries:
-  - title: /categories return CORS message
-    description: >-
-      When you make a JavaScript call to the /categories path it returns a CORS
-      error. All the others work, not sure why this one would be different?
-    url: 'https://github.com/adopta-agency/open-referral-miami/issues/3'
-    date: '2017-03-01T05:46:12Z'
+- title: Issues
+  image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-issue.png'
+  header: All current known issues around the operations of the API are listed here.
+  footer: This issues list is driven from Github issues that are taged as issue.
+  entries:
+    - title: /categories return CORS message
+      description: >-
+        When you make a JavaScript call to the /categories path it returns a CORS
+        error. All the others work, not sure why this one would be different?
+      url: 'https://github.com/adopta-agency/open-referral-miami/issues/3'
+      date: '2017-03-01T05:46:12Z'
