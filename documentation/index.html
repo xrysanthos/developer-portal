@@ -13,6 +13,11 @@ layout: page
       document.getElementById($id).style.display = 'none';
       }
     }
+
+   function getRequest($path)
+    {
+    alert('running!');
+    }
 </script>
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 0px;">
 
@@ -331,7 +336,7 @@ layout: page
                                                 </tr>
                                                 <tr>
                                                   <td align="left" style="font-size: 12px; padding: 10px;">
-                                                      <table style="width: 50%;">
+                                                      <table style="width: 50%;" id="{{ slug }}-headers">
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'header' %}
                                                             <tr>
@@ -365,7 +370,7 @@ layout: page
                                                 </tr>
                                                 <tr>
                                                   <td align="left" style="font-size: 12px; padding: 10px;">
-                                                      <table style="width: 50%;">
+                                                      <table style="width: 50%;" id="{{ slug }}-parameters">
                                                         {% for parameter in parameters %}
                                                           {% if parameter.in == 'query' || parameter.in == 'path' %}
                                                             <tr>
@@ -385,7 +390,10 @@ layout: page
                                               <td style="font-size: 12px; padding: 5px;"><strong>Response:</strong></td>
                                             </tr>
                                             <tr>
-                                              <td align="center"style="font-size: 12px; padding: 10px;">[put response here]</td>
+                                              <td align="center" style="font-size: 12px; padding: 10px;" id="{{ slug }}-response">[put response here]</td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center"s tyle="font-size: 12px; padding: 25px;"><button type="button" class="btn btn-success">Make API Request</button></td>
                                             </tr>
                                           </table>
                                         </td>
