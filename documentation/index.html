@@ -201,7 +201,7 @@ layout: page
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
 
-                        <table width="95%" border="0" style="margin-left: 15px; margin-right: 15px;">
+                        <table width="95%" border="1" style="margin-left: 15px; margin-right: 15px;">
                           {% assign taglist = '' %}
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
@@ -309,8 +309,8 @@ layout: page
                                         </tr>
                                       </tr>
                                       <tr id="{{ slug }}-row" style="display: none;">
-                                        <td colspan="4">
-                                          <table width="90%" border="0" align="center">
+                                        <td colspan="4" style="padding: 15px;">
+                                          <table width="90%" border="1" align="center">
 
                                             <!-- Begin Headers -->
                                             {% assign number_of_parameters = parameters | size %}
