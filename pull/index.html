@@ -52,7 +52,8 @@ title: Pull
           // If no error we have access, read YAML store
           repo.read('gh-pages', '_data/api-commons/api-road-map.yaml', function(err, data) {
 
-            $yaml_store = jsyaml.load(data);
+            $yaml_store_array = jsyaml.load(data);
+            $yaml_store = $yaml_store_array[0];
 
             var issues = github.getIssues($org,$repo);
 
