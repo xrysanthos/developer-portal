@@ -159,6 +159,13 @@ layout: page
 					<td><a href="{{ code_url }}" id="x-code-url">Code</a><div id="d-code"></div></td>
 				</tr>
         {% endif %}
+        {% if postman_url != null %}
+				<tr id="x-code-row">
+					<td width="25" style="height: 55px;"></td>
+					<td width="75" align="center" valign="middle"><a href="{{ code_url }}" id="x-code-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/postman/postman-logo.png" width="35" /></a></td>
+					<td><a href="{{ postman_url }}" id="x-code-url">Postman Collectioin</a><div id="d-code"></div></td>
+				</tr>
+        {% endif %}
         {% if plan_url != null %}
 				<tr id="x-plan-row">
 					<td width="25" style="height: 55px;"></td>

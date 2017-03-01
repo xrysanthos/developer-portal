@@ -54,7 +54,7 @@
   - type: x-getting-started
     url: getting-started/
   - type: x-github
-    url: https://github.com/adopta-agency/open-referral-miami/
+    url: https://github.com/miami-open-211/developer-portal/
   - type: x-issues
     url: issues/
   - type: x-status
@@ -79,6 +79,10 @@
     url: https://twitter.com/apievangelist
   - type: x-twitter
     url: https://twitter.com/apievangelist
+  - type: x-postman
+    url: http://miami.open.211.adopta.agency/postman_collection.json
+  - type: x-code-page
+    url: code/
   include: []
   maintainers:
   - FN: Greg Bloom
