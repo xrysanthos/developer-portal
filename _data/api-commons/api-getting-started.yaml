@@ -5,8 +5,6 @@
   steps:
     - title: Visit the API documentation
       url: /documentation/
-    - title: Download the Postman collection
-      url: /postman_collection.json
     - title: Visit the code section
       url: /code/
     - title: Submit any issues you have
