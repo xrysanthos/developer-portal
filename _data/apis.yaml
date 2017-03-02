@@ -70,7 +70,7 @@
   - type: x-status-dashboard
     url: status/
   - type: x-api-science
-    url: http://developer.switchboard.miami.adopta.agency/json/miami-open211-2017-03-01.json
+    url: https://api.apiscience.com/v1/monitors/1572918/uptime.json?preset=lastDay
   - type: x-support-overview-page
     url: support/
   - type: x-terms-of-service-page
