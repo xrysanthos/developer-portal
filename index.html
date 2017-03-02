@@ -269,19 +269,7 @@ layout: page
 
                       {% if property.type == 'x-openapi-spec' %}
                         {% assign openapi_spec_url = property.url %}
-                        {% assign pathname = openapi_spec_url | replace: '_data/api-commons/','' %}
-                        {% assign pathname = pathname | replace: '.yaml','' %}
-                        {% assign pathname = pathname | replace: '.json','' %}
-                        {% assign pathname = pathname | replace: '/','.' %}
-                        {% assign pathname = pathname | replace: 'api-commons.','' %}
-
-                        {% for entry in apicommons %}
-                          {% assign thisname = entry[0] %}
-                          {% assign thisentry = entry[1] %}
-                          {% if thisname == pathname %}
-                            {% assign openapi_spec_json = thisentry %}
-                          {% endif %}
-                        {% endfor %}
+                        {% assign openapi_spec_json = site.data.api-commons.openapi-spec %}
                       {% endif %}
 
                       {% if property.type == 'x-postman %}
