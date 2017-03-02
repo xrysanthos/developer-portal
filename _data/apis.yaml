@@ -36,45 +36,45 @@
       url: api-commons/api-filter.yaml
   x-common:
   - type: x-authentication-overview
-    url: authentication/
+    url: /authentication/
   - type: x-base-url-for-api
     url: http://api.kinlane.com
   - type: x-blog
-    url: blog/
+    url: /blog/
   - type: x-blog-rss-feed
     url: blog.xml
   - type: x-change-log
-    url: change-log/
+    url: /change-log/
   - type: x-portal
     url: http://miami.open.211.adopta.agency/
   - type: x-documentation
-    url: documentation/
+    url: /documentation/
   - type: x-faq
-    url: frequently-asked-questions/
+    url: /frequently-asked-questions/
   - type: x-getting-started
-    url: getting-started/
+    url: /getting-started/
   - type: x-github
     url: https://github.com/miami-open-211/developer-portal/
   - type: x-issues
-    url: issues/
+    url: /issues/
   - type: x-status
-    url: status/
+    url: /status/
   - type: x-login
     url: https://miamiopen211-api.herokuapp.com/users/sign_in
   - type: x-privacy-policy-page
-    url: privacy-policy/
+    url: /privacy-policy/
   - type: x-road-map
-    url: road-map/
+    url: /road-map/
   - type: x-selfservice-registration
     url: https://miamiopen211-api.herokuapp.com/users/sign_up
   - type: x-status-dashboard
-    url: status/
+    url: /status/
   - type: x-api-science
     url: https://api.apiscience.com/v1/monitors/1572918/uptime.json?preset=lastDay
   - type: x-support-overview-page
-    url: support/
+    url: /support/
   - type: x-terms-of-service-page
-    url: terms-of-service/
+    url: /terms-of-service/
   - type: x-twitter
     url: https://twitter.com/apievangelist
   - type: x-twitter
@@ -84,7 +84,7 @@
   - type: x-postman
     url: http://miami.open.211.adopta.agency/postman_collection.json
   - type: x-code-page
-    url: code/
+    url: /code/
   include: []
   maintainers:
   - FN: Greg Bloom
