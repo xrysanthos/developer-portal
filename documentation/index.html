@@ -259,7 +259,9 @@ layout: page
                       </td>
                       <td align="right" style="padding: 10px;">
                         {% if openapi_spec_url != null and openapi_spec_url != empty %}
-                          <a href="{{ site.url }}{{ openapi_spec_url }}" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">OpenAPI Spec</a>
+                          <strong>OpenAPI</strong>
+                          <a href="https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/openapi.yaml" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">OpenAPI Spec</a>
+                          <a href="{{ site.url }}data/openapi.json" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">OpenAPI Spec</a>
                         {% endif %}
                       </td>
                     </tr>
