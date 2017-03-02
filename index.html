@@ -267,9 +267,9 @@ layout: page
                       {% assign thisname = thisname | append:'/' %}
                       {% assign thisname = thisname | replace: ' ','-' %}
 
-                      {% if property.type == 'x-openapi-spec' %}
+                      {% if property.type == 'x-openapi' %}
                         {% assign openapi_spec_url = property.url %}
-                        {% assign openapi_spec_json = site.data.api-commons.openapi-spec %}
+                        {% assign openapi_spec_json = site.data.api-commons.openapi %}
                       {% endif %}
 
                       {% if property.type == 'x-postman %}
@@ -292,7 +292,7 @@ layout: page
                       </td>
                       <td align="right">
                         (<a href="{{ site.url }}{{ documentation_url }}" title="View Documentation" style="padding: 3px;">Docs</a>)
-                        <strong>OpenAPI</strong>
+                        <strong>OpenAPI:</strong>
                         (<a href="https://raw.githubusercontent.com/{{ site.github_org }}/{{ site.github_repo }}/master/_data/api-commons/openapi.yaml" target="_blank" title="YAML OpenAPI" style="padding: 3px;">YAML</a>)
                         (<a href="{{ site.url }}data/openapi.json" target="_blank" title="JSON OpenAPI" style="padding: 3px;">JSON</a>)
                       </td>
