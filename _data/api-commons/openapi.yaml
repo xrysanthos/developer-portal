@@ -1,7 +1,7 @@
 - swagger: '2.0'
   info:
-    title: Miami Open 211 API
-    description: This is a developer area for the Miami Open211 API, providing access to the raw data behind the Switchboard of Miami website. The purpose of this API is to allow anyone to develop web, mobile, or other types of applications that serve the mission of Miami Open211.
+    title: Miami Open211 API
+    description: This is a developer area for the Miami Open211 API, which provides access to resource directory data maintained by Miami's 2-1-1 hotline. The purpose of this API is to allow anyone to develop tools that make it easier for people to find and use information about the resources available to Miami-Dade residents in need. This portal has been developed through [the Open Referral Initiative](https://openreferral.org), with support from [the Children's Trust of South Florida](https://thechildrenstrust.org), [Code for Miami](http://codeformiami.org), and [the API Evangelist](https://apievangelist.com). Learn more about [the Miami Open211 project here](https://openreferral.org/welcome-to-miami-open211/).
     termsOfService: ''
     version: 1.0.0
   host: "miamiopen211-api.herokuapp.com"
