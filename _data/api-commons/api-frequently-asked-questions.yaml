@@ -5,20 +5,24 @@
   categories:
     - category: General
       questions:
-        - question: Who operates the Switchboard of Miami website and API?
-          answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        - question: Why do you have APIs?
-          answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        - question: What is the Miami Open211 project?
+          answer: The Miami Open211 project is prototyping an 'open platform' for the Miami 2-1-1 community resource referral program. 
+        - question: Why is Miami Open211 deploying an API?
+          answer: Miami's 2-1-1 hotline curates comprehensive directory information about the many health, human, and social services available to Miami-Dade residents in need. This project aims to demonstrate that API access to this data can expand the reach of 2-1-1's information and enhance its sustainability as a public service.
         - question: What can I build with the APIs?
-          answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          answer: The possibilities are endless! Check out [the prototype front-end that we built](https://github.com/miami-open-211/miami211), or check out [HelpSteps](https://github.com/codeforboston/helpsteps-mobile) and [Link](https://github.com/zendesk/linksf) for examples of other tools that can be compatible with this API.
     - category: Support
       questions:
         - question: What is the best way to get support?
-          answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          answer: Miami Open211 is a prototype, and is not currently supported formally. But please submit issues and reach out, and we'll see if we can help :)
         - question: Can I email you?
-          answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          answer: Sure. Reach the project director Greg Bloom at bloom@openreferral.org
         - question: Can I talk to you on the phone?
-          answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          answer: Sure. Reach the project director Greg Bloom at 305 962 2859
+    - category: About Open Referral
+      questions: 
+        - question: What is the Open Referral initiative?
+          answer: Check out Open Referral's [website here](https://openreferral.org), and the Open Referral [FAQ here](http://docs.openreferral.org/en/latest/faq). 
     - category: Management
       questions:
         - question: How do I edit the home page of the Miami Open211 API portal?
